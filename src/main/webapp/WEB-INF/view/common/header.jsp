@@ -9,12 +9,16 @@
 <body>
 	<div style="display: flex; justify-content:space-between;">
 		<div style="display: flex; justify-content:space-between; gap:40px;">
-			<div>홈으로가는사진</div>
+			<div class="no-deco-link">
+				<a href="${pageContext.servletContext.contextPath }/index">
+					<i class="fa-solid fa-baseball-bat-ball fa-3x"></i>
+				</a>
+			</div>
 			<form style="" action="${pageContext.servletContext.contextPath }/search">
 				<input style="" type="text" placeholder="검색어를 입력하세요" name=""/>
 				<i class="fa-solid fa-magnifying-glass icon-search"></i>
+				<button type="button">검색</button>
 			</form>
-			<button type="button">검색</button>
 		</div>
 		<div style="justify-content:space-between; gap: 10px;">
 			<c:choose>
