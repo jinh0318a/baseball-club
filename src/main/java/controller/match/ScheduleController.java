@@ -69,6 +69,7 @@ public class ScheduleController extends HttpServlet {
 			List<Match> matches = matchDao.findByWeek(Date.valueOf(startDate), Date.valueOf(endDate));
 
 			req.setAttribute("thisWeek", startDate);
+			req.setAttribute("endDate", endDate);
 			req.setAttribute("lastWeek", startDate.minusWeeks(1));
 			req.setAttribute("nextWeek", startDate.plusWeeks(1));
 			req.setAttribute("matches", matches);
