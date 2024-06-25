@@ -22,12 +22,12 @@
 		</div>
 		<div style="justify-content:space-between; gap: 10px;">
 			<c:choose>
-				<c:when test="${sessionScope.auth == null }">
-					<a href="">로그인</a>
-					<a href="">회원가입</a>
+				<c:when test="${sessionScope.authUser == null }">
+					<a href="${pageContext.servletContext.contextPath }/login">로그인</a>
+					<a href="${pageContext.servletContext.contextPath }/join">회원가입</a>
 				</c:when>
 				<c:otherwise>
-					<a href="">마이페이지</a>
+					<a href="${pageContext.servletContext.contextPath }/mypage">마이페이지</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -36,7 +36,7 @@
 		<a>순위</a>
 		<a>경기일정</a>
 		<a>기록실</a>
-		<a>전체게시판</a>
+		<a href="${pageContext.servletContext.contextPath }/board/list">전체게시판</a>
 		<a>구단게시판</a>
 		<a>거래게시판</a>
 	</div>
