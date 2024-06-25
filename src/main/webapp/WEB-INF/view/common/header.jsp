@@ -18,12 +18,13 @@
 		</div>
 		<div style="justify-content:space-between; gap: 10px;">
 			<c:choose>
-				<c:when test="${sessionScope.auth == null }">
-					<a href="">로그인</a>
-					<a href="">회원가입</a>
+				<c:when test="${sessionScope.authUser == null }">
+					<a href="${pageContext.servletContext.contextPath }/login">로그인</a>
+					<a href="${pageContext.servletContext.contextPath }/join">회원가입</a>
 				</c:when>
 				<c:otherwise>
-					<a href="">마이페이지</a>
+					<a href="${pageContext.servletContext.contextPath }/mypage">마이페이지</a>
+					<a href="${pageContext.servletContext.contextPath }/logout">로그아웃</a>
 				</c:otherwise>
 			</c:choose>
 		</div>

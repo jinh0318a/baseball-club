@@ -69,7 +69,6 @@ public class UserDao {
 		ods.setUser("baseball_club");
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
-
 			PreparedStatement stmt = conn.prepareStatement("delete from users where user_id=?");
 			stmt.setString(1, userId);
 			
@@ -91,7 +90,7 @@ public class UserDao {
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
 
-			PreparedStatement stmt = conn.prepareStatement("update users set password=?, nickname=?, email=?, club=? where user_id=?");
+			PreparedStatement stmt = conn.prepareStatement("update users set password=?, nickname=?, email=?, FAVORITE_CLUB=? where user_id=?");
 			stmt.setString(1, user.getPassword());
 			stmt.setString(2, user.getNickname());
 			stmt.setString(3, user.getEmail());
