@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div>
+	<%@ include file="/WEB-INF/view/common/header.jsp" %>
+</div>
 </body>
-</html>
+</html>   
