@@ -16,7 +16,7 @@ public class FindPitcherRanking {
 		try {
 			List<Pitcher> picher = new ArrayList<>();
 			
-			Document doc =Jsoup.connect("https://www.koreabaseball.com/Record/Player/PitcherBasic/Basic2.aspx").get();
+			Document doc =Jsoup.connect("https://www.koreabaseball.com/Record/Player/PitcherBasic/Basic1.aspx").get();
 			
 			Elements elms 	=doc.getElementsByAttributeValue("summary", "선수 기본기록으로 경기,타석,타수,득점,안타,2루타, 3루타 등을 표시합니다");
 			Element e = elms.get(0);
@@ -37,10 +37,10 @@ public class FindPitcherRanking {
 				String ip = tds.get(10).text();
 				int hit = Integer.parseInt(tds.get(11).text());
 				int hr = Integer.parseInt(tds.get(12).text());
-				int bb = Integer.parseInt(tds.get(12).text());	
-				int so = Integer.parseInt(tds.get(12).text());
-				int r = Integer.parseInt(tds.get(12).text());
-				double whip = Double.parseDouble(tds.get(12).text());
+				int bb = Integer.parseInt(tds.get(13).text());	
+				int so = Integer.parseInt(tds.get(15).text());
+				int r = Integer.parseInt(tds.get(16).text());
+				double whip = Double.parseDouble(tds.get(18).text());
 				
 				Pitcher one = new Pitcher(rank,name,team,era,game,win,lose,save,hold,ip,hit,hr,bb,so,r,whip);
 				picher.add(one);
