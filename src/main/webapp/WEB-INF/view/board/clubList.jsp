@@ -4,14 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>구단 게시판</title>
 </head>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 <body>
 <div>
 		<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	</div>
 	<div>
-		<a href="${pageContext.servletContext.contextPath }/board/new">새글작성</a>
+		<a href="${pageContext.servletContext.contextPath }/board/new" class="no-deco-link">새글작성</a>
 	</div>
 	<div>
 		<table>
@@ -29,7 +31,7 @@
 					<td>${one.type }</td>
 					<td>${one.category }</td>
 					<td><a
-						href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }">
+						href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }" class="no-deco-link">
 							${one.title } </a></td>
 					<td>${one.writerId }</td>
 					<td>${one.writedAt }</td>
