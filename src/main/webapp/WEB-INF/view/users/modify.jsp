@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지 | 정보수정</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
 

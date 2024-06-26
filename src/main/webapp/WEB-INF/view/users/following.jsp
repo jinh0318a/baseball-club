@@ -7,19 +7,21 @@
 <head>
 <meta charset="UTF-8">
 <title>팔로잉</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/view/common/header.jsp" %>
 <div>
 팔로어 목록 ${follower }명
 <c:forEach var="i" items="${follwers }">
-<a href="${pageContext.servletContext.contextPath }/profile?userId=${i.followerId }">${i.followerId }</a>
+<a href="${pageContext.servletContext.contextPath }/profile?userId=${i.followerId }" class="no-deco-link">${i.followerId }</a>
 </c:forEach>
 </div>
 <div>
 팔로잉 목록 ${following }명
 <c:forEach var="i" items="${followings }">
-<a href="${pageContext.servletContext.contextPath }/profile?userId=${i.followingId }">${i.followingId }</a>
+<a href="${pageContext.servletContext.contextPath }/profile?userId=${i.followingId }" class="no-deco-link">${i.followingId }</a>
 </c:forEach>
 </div>
 

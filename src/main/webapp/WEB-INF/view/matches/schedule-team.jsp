@@ -7,41 +7,43 @@
 <head>
 <meta charset="UTF-8">
 <title>팀별 경기 일정</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/view/common/header.jsp" %>
 <div>
-<a href="${pageContext.servletContext.contextPath }/schedule">주간 일정</a>
-<a href="${pageContext.servletContext.contextPath }/schedule-month">월별 일정</a> | 
-팀별 일정 | 
+<a href="${pageContext.servletContext.contextPath }/schedule" class="no-deco-link">주간 일정</a> | 
+<a href="${pageContext.servletContext.contextPath }/schedule-month" class="no-deco-link">월별 일정</a> | 
+팀별 일정
 </div>
 	<div>
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=LG">LG</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=LG" class="no-deco-link">LG</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=KT">KT</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=KT" class="no-deco-link">KT</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=SSG">SSG</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=SSG" class="no-deco-link">SSG</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=NC">NC</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=NC" class="no-deco-link">NC</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=두산">두산</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=두산" class="no-deco-link">두산</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=KIA">KIA</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=KIA" class="no-deco-link">KIA</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=롯데">롯데</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=롯데" class="no-deco-link">롯데</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=삼성">삼성</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=삼성" class="no-deco-link">삼성</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=한화">한화</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=한화" class="no-deco-link">한화</a> |
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=키움">키움</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=키움" class="no-deco-link">키움</a>
 	</div>
 	<div>
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=${teamName }&month=${previous }">&lt;</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=${teamName }&month=${previous }" class="no-deco-link">&lt;</a>
 		${month }월 일정 <a
-			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=${teamName }&month=${next }">&gt;</a>
+			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=${teamName }&month=${next }" class="no-deco-link">&gt;</a>
 	</div>
 	<div>
 		<c:choose>

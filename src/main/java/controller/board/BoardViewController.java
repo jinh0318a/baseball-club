@@ -40,11 +40,13 @@ public class BoardViewController extends HttpServlet {
 				List<Participant> participant = participantDao.findByEventId(boardId);
 				List<String> userIds = new ArrayList<>();
 				boolean duplicate = false;
-				for (Participant one : participant) {
-					userIds.add(one.getUserId());
-					if (one.getUserId().equals(authUser.getUserId())) {
-						duplicate = true;
-						break;
+				if (authUser != null) {
+					for (Participant one : participant) {
+						userIds.add(one.getUserId());
+						if (one.getUserId().equals(authUser.getUserId())) {
+							duplicate = true;
+							break;
+						}
 					}
 				}
 

@@ -5,13 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>새 글 작성</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/view/common/header.jsp" %>
-	<div>
-		<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	</div>
 	<div>
 		<span>새 글 작성</span>
 		<form
