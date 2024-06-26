@@ -29,12 +29,29 @@
 			${board.body }</p>
 
 	</div>
+	<div>
+		<c:if test="${clubEvent && !duplicate}">
+			<span>현재 참여 인원 : ${participantNum }</span>
+			<a href="${pageContext.servletContext.contextPath }/participant?boardId=${board.boardId}">
+				<button type="button">참가신청</button>
+			</a>
+		</c:if>
+		<c:if test="${clubEvent && duplicate }">
+			<span>현재 참여 인원 : ${participantNum }</span>
+			<a href="${pageContext.servletContext.contextPath }/participant/cancel?boardId=${board.boardId}">
+				<button type="button">참가취소</button>
+			</a>
+		</c:if>
+
+	</div>
 	<div style="text-align: right;">
-		<c:if test="${userId }">
-			<a href="${pageContext.servletContext.contextPath }/board/delete?boardId=${board.boardId }">
+		<c:if test="${sessionScope.authUser.userId == board.writerId }">
+			<a
+				href="${pageContext.servletContext.contextPath }/board/delete?boardId=${board.boardId }">
 				<button type="button">삭제</button>
 			</a>
-			<a href="${pageContext.servletContext.contextPath }/board/update?boardId=${board.boardId }">
+			<a
+				href="${pageContext.servletContext.contextPath }/board/update?boardId=${board.boardId }">
 				<button type="button">수정</button>
 			</a>
 		</c:if>
