@@ -259,7 +259,6 @@ public class BoardDao {
 		ods.setUser("baseball_club");
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
-			// 식별키로 조회하고,
 			PreparedStatement stmt = conn.prepareStatement("UPDATE BOARDS SET VIEWS=VIEWS+1 WHERE BOARD_ID=?");
 			stmt.setInt(1, boardId);
 
