@@ -29,7 +29,6 @@
 							type="password" name="password" placeholder="비밀번호">
 						<button class="submit">로그인</button>
 					</form>
-					<div></div>
 				</div>
 			</div>
 		</div>
