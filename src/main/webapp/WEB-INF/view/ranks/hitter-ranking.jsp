@@ -8,6 +8,7 @@
 <title>타자 순위</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 	<c:forEach var="i" items="${hitterRanking }">
 	<p>
 	순위 ${i.rank }

@@ -113,5 +113,30 @@ public class MatchDao {
 
 	}
 	
+	
+	public List<Match> searchMatch(String word) throws SQLException {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn
+					.prepareStatement("select * from matches where summary like ?");
+			stmt.setString(1, "%"+word+"%");
+
+			ResultSet rs = stmt.executeQuery();
+			List<Match> matches = new ArrayList<Match>();
+			while (rs.next()) {
+				Match one = new Match(rs.getString(1), rs.getDate(2), rs.getString(3), rs.getString(4));
+				matches.add(one);
+			}
+			return matches;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+	}
+	
 
 }

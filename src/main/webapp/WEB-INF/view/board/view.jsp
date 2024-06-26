@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 	<div>
 		<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	</div>
@@ -38,23 +39,17 @@
 		</form>
 	</div>
 	<div>
-		<c:forEach var="i" items="${comments }">
-			<p>
-				작성자 ${i.writerId } 내용 ${i.body } 날짜 ${i.writedAt }
-				<c:if
-					test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
-					<a
-						href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }">좋아요
-						${i.like }</a>
-				</c:if>
-				<c:if test="${sessionScope.authUser.userId == i.writerId }">
-					<a
-						href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button
-							type="button">삭제</button></a>
-				</c:if>
-			</p>
-		</c:forEach>
-	</div>
+	<c:forEach var="i" items="${comments }">
+	<p>작성자 ${i.writerId } 내용 ${i.body } 날짜 ${i.writedAt } 좋아요 ${i.like }
+	<c:if test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
+	<a href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }">추천</a>
+	</c:if>
+	<c:if test="${sessionScope.authUser.userId == i.writerId }">
+	<a href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button type="button">삭제</button></a>
+	</c:if>
+	</p>
+	</c:forEach>
+
 	<div>
 		<c:if test="${clubEvent && !duplicate}">
 			<span>현재 참여 인원 : ${participantNum }</span>
@@ -70,7 +65,6 @@
 				<button type="button">참가취소</button>
 			</a>
 		</c:if>
-
 	</div>
 	<div style="text-align: right;">
 

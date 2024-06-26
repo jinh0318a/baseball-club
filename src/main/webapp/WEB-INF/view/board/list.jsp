@@ -8,9 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	</div>
+	<%@ include file="/WEB-INF/view/common/header.jsp"%>
+
 	<div>
 		<a href="${pageContext.servletContext.contextPath }/board/new">새글작성</a>
 	</div>
