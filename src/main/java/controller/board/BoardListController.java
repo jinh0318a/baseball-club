@@ -17,37 +17,44 @@ public class BoardListController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		try {
 			int p = req.getParameter("p") == null ? 1 : Integer.parseInt(req.getParameter("p"));
 
 			int size = 15;
-			int start = size * (p-1) + 1;
+			int start = size * (p - 1) + 1;
 			int end = size * p;
 
-			
 			BoardDao boardDao = new BoardDao();
-			List<Board> board = boardDao.findByAll(start,end);
-			
+			List<Board> board = boardDao.findByAll(start, end);
+
 			int count = boardDao.countAll();
 			int totalPages = count / size + (count % size > 0 ? 1 : 0);
 			
-			List<Board> boardList = new ArrayList<Board>();
-			for(Board one : board) {
+			List<Board> announcement = new ArrayList<Board>();
+			
+			for (Board one : board) {
 				String type = one.getType();
-				if(type.equals("광장")) {
-					boardDao.SearchBoardByType(type);
+				if (type.equals("공지사항")) {
+					boardDao.searchBoardByType(type);
+					announcement.add(one);
+				}
+			}
+			List<Board> boardList = new ArrayList<Board>();
+			for (Board one : board) {
+				String type = one.getType();
+				if (type.equals("광장")) {
+					boardDao.searchBoardByType(type);
 					boardList.add(one);
 				}
 			}
-			
+			req.setAttribute("announcement", announcement);
 			req.setAttribute("boardList", boardList);
-			
+
 			req.getRequestDispatcher("/WEB-INF/view/board/list.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 }

@@ -1,14 +1,18 @@
 package controller.board;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import dao.BoardDao;
+import dao.ParticipantDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vo.Board;
+import vo.Participant;
 import vo.User;
 
 @WebServlet("/board/*")

@@ -21,27 +21,35 @@ public class BoardEventsController extends HttpServlet {
 			int p = req.getParameter("p") == null ? 1 : Integer.parseInt(req.getParameter("p"));
 
 			int size = 15;
-			int start = size * (p-1) + 1;
+			int start = size * (p - 1) + 1;
 			int end = size * p;
 
-			
 			BoardDao boardDao = new BoardDao();
-			List<Board> board = boardDao.findByAll(start,end);
-			
+			List<Board> board = boardDao.findByAll(start, end);
+
 			int count = boardDao.countAll();
 			int totalPages = count / size + (count % size > 0 ? 1 : 0);
-			
+
 			List<Board> eventBoard = new ArrayList<Board>();
-			for(Board one : board) {
+			for (Board one : board) {
 				String type = one.getType();
-				if(type.equals("이벤트")) {
-					boardDao.SearchBoardByType(type);
+				if (type.equals("이벤트")) {
+					boardDao.searchBoardByType(type);
 					eventBoard.add(one);
 				}
 			}
-			
+			List<Board> announcement = new ArrayList<Board>();
+
+			for (Board one : board) {
+				String type = one.getType();
+				if (type.equals("공지사항")) {
+					boardDao.searchBoardByType(type);
+					announcement.add(one);
+				}
+			}
+
 			req.setAttribute("eventBoard", eventBoard);
-			
+			req.setAttribute("announcement", announcement);
 			req.getRequestDispatcher("/WEB-INF/view/board/eventList.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
