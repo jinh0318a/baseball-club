@@ -18,7 +18,7 @@
 			<c:if test="${empty board.writerId }">
 				<span>탈퇴한회원</span>
 			</c:if>
-			<span>${board.writerId }</span>
+			<span><a href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }">${board.writerId }</a></span>
 		</div>
 		<div>
 			<span>작성일</span> <span>${board.writedAt}<span> | <span>조회</span>
