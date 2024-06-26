@@ -15,9 +15,9 @@
 				</a>
 			</div>
 			<form style="" action="${pageContext.servletContext.contextPath }/search">
-				<input style="" type="text" placeholder="검색어를 입력하세요" name=""/>
+				<input style="" type="text" placeholder="검색어를 입력하세요" name="word"/>
 				<i class="fa-solid fa-magnifying-glass icon-search"></i>
-				<button type="button">검색</button>
+				<button type="submit">검색</button>
 			</form>
 		</div>
 		<div style="justify-content:space-between; gap: 10px;">

@@ -7,7 +7,7 @@
 <title>로그인</title>
 </head>
 <body>
-
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 <form action="${pageContext.servletContext.contextPath }/login-handle" method="post">
 <input type="text" name="userId" placeholder="아이디">
 <input type="password" name="password" placeholder="비밀번호">

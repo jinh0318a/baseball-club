@@ -8,11 +8,12 @@
 <title>프로필</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 	<div>
 	<p>아이디 ${foundUser.userId }</p>
 	<p>닉네임 ${foundUser.nickname }</p>
 	<p>선호구단  ${foundUser.club }</p>
-	<p>팔로어 ${follower } 팔로잉 ${following }
+	<p>팔로워 ${follower } 팔로잉 ${following }
 	</p>
 	</div>
 	

@@ -9,6 +9,12 @@
 <title>팀별 경기 일정</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
+<div>
+<a href="${pageContext.servletContext.contextPath }/schedule">주간 일정</a>
+<a href="${pageContext.servletContext.contextPath }/schedule-month">월별 일정</a> | 
+팀별 일정 | 
+</div>
 	<div>
 		<a
 			href="${pageContext.servletContext.contextPath }/schedule-team?teamName=LG">LG</a>

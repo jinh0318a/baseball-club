@@ -11,7 +11,7 @@ import oracle.jdbc.datasource.impl.OracleDataSource;
 import vo.Board;
 
 public class BoardDao {
-	
+
 	public int countAll() throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -22,10 +22,10 @@ public class BoardDao {
 
 			ResultSet rs = stmt.executeQuery();
 
-			if(rs.next()) {
+			if (rs.next()) {
 				int cnt = rs.getInt("COUNT(*)");
 				return cnt;
-			}else {
+			} else {
 				return -1;
 			}
 		} catch (Exception e) {
@@ -33,7 +33,7 @@ public class BoardDao {
 			return -1;
 		}
 	}
-	
+
 	public List<Board> findByAll(int start, int end) throws SQLException {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -41,14 +41,14 @@ public class BoardDao {
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
 
-			PreparedStatement stmt = conn.
-					prepareStatement("SELECT * FROM (SELECT ROWNUM RN, g.* FROM (SELECT * FROM BOARDS ORDER BY TITLE)g) WHERE RN BETWEEN ? AND ?");
+			PreparedStatement stmt = conn.prepareStatement(
+					"SELECT * FROM (SELECT ROWNUM RN, g.* FROM (SELECT * FROM BOARDS ORDER BY TITLE)g) WHERE RN BETWEEN ? AND ?");
 			stmt.setInt(1, start);
 			stmt.setInt(2, end);
 			ResultSet rs = stmt.executeQuery();
 			List<Board> board = new ArrayList<>();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				Board one = new Board();
 				one.setBoardId(rs.getInt("board_id"));
 				one.setWriterId(rs.getString("writer_id"));
@@ -66,8 +66,7 @@ public class BoardDao {
 			return null;
 		}
 	}
-	
-	
+
 	public boolean save(Board board) throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -76,7 +75,8 @@ public class BoardDao {
 
 		try (Connection conn = ods.getConnection()) {
 
-			PreparedStatement stmt = conn.prepareStatement("INSERT INTO BOARDS VALUES(BOARD_SEQ.NEXTVAL,?,?,?,?,?,?,?)");
+			PreparedStatement stmt = conn
+					.prepareStatement("INSERT INTO BOARDS VALUES(BOARD_SEQ.NEXTVAL,?,?,?,?,?,?,?)");
 			stmt.setString(1, board.getWriterId());
 			stmt.setString(2, board.getTitle());
 			stmt.setString(3, board.getBody());
@@ -93,7 +93,7 @@ public class BoardDao {
 			return false;
 		}
 	}
-	
+
 	public List<Board> findAll() throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -123,7 +123,7 @@ public class BoardDao {
 			return null;
 		}
 	}
-	
+
 	public Board findByBoardId(int boardId) throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -157,7 +157,7 @@ public class BoardDao {
 			return null;
 		}
 	}
-	
+
 	public List<Board> findByWriterId(String writerId) throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -191,7 +191,7 @@ public class BoardDao {
 			return null;
 		}
 	}
-	
+
 	public boolean deleteWriteView(int boardId) throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -209,7 +209,7 @@ public class BoardDao {
 			return false;
 		}
 	}
-	
+
 	public boolean deleteByWriterId(String boardId) throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
@@ -221,7 +221,7 @@ public class BoardDao {
 
 			int r = stmt.executeUpdate();
 
-			return r == 1 ? true : false;
+			return r >= 0 ? true : false;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
@@ -236,7 +236,8 @@ public class BoardDao {
 
 		try (Connection conn = ods.getConnection()) {
 
-			PreparedStatement stmt = conn.prepareStatement("UPDATE BOARDS SET TITLE=?, BODY=?, TYPE=?, CATEGORY=? WHERE BOARD_ID=?");
+			PreparedStatement stmt = conn
+					.prepareStatement("UPDATE BOARDS SET TITLE=?, BODY=?, TYPE=?, CATEGORY=? WHERE BOARD_ID=?");
 			stmt.setString(1, board.getTitle());
 			stmt.setString(2, board.getBody());
 			stmt.setString(3, board.getType());
@@ -272,15 +273,47 @@ public class BoardDao {
 	}
 	
 	public List<Board> searchBoardByType(String type) throws Exception {
+
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
 		ods.setUser("baseball_club");
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
-
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM BOARDS WHERE TYPE=? ORDER BY WRITED_AT DESC");
 			stmt.setString(1, type);
+			ResultSet rs = stmt.executeQuery();
+			List<Board> board = new ArrayList<>();
+			while (rs.next()) {
+				Board one = new Board();
+				one.setBoardId(rs.getInt("board_id"));
+				one.setWriterId(rs.getString("writer_id"));
+				one.setTitle(rs.getString("title"));
+				one.setBody(rs.getString("body"));
+				one.setViews(rs.getInt("views"));
 
+				one.setWritedAt(rs.getDate("writed_at"));
+				one.setCategory(rs.getString("category"));
+				one.setType(rs.getString("type"));
+				board.add(one);
+			}
+			return board;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public List<Board> searchBoard(String word) throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn
+					.prepareStatement("select * from boards where title like ? or category like ? or type like ?");
+			stmt.setString(1, word);
+			stmt.setString(2, word);
+			stmt.setString(3, word);
 			ResultSet rs = stmt.executeQuery();
 			List<Board> board = new ArrayList<>();
 			while (rs.next()) {
@@ -296,14 +329,11 @@ public class BoardDao {
 				board.add(one);
 
 			}
-
 			return board;
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
-	
+
 }

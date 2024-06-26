@@ -9,7 +9,7 @@
 <title>팔로잉</title>
 </head>
 <body>
-
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 <div>
 팔로어 목록 ${follower }명
 <c:forEach var="i" items="${follwers }">
