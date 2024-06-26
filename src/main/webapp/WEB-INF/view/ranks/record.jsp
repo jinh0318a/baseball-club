@@ -7,6 +7,7 @@
 <title>기록실</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 	<a href="${pageContext.servletContext.contextPath }/hitter-ranking">타자 순위</a>
 	<a href="${pageContext.servletContext.contextPath }/pitcher-ranking">투수 순위</a>
 </body>

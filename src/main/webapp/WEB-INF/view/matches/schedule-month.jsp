@@ -8,7 +8,13 @@
 <title>월간 일정</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
+<div>
+<a href="${pageContext.servletContext.contextPath }/schedule">주간 일정</a>
+월별 일정 | 
+<a href="${pageContext.servletContext.contextPath }/schedule-team">팀별 일정</a> | 
 
+</div>
 	<a href="${pageContext.servletContext.contextPath }/schedule-month?month=${previous }">&lt;</a>
  	${month }월 일정
 	<a href="${pageContext.servletContext.contextPath }/schedule-month?month=${next }">&gt;</a>
