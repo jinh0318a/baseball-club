@@ -48,6 +48,28 @@
 			</div>
 		</form>
 	</div>
-
+	<section class="login">
+		<div class="login_box">
+			<div class="left">
+				<div class="top_link">
+					<a href="${pageContext.servletContext.contextPath }/index"> <i
+						class="fa-solid fa-baseball-bat-ball fa-1x no-deco-link"></i>
+					</a> <a href="${pageContext.servletContext.contextPath }/join"
+						class="no-deco-link"">회원가입</a>
+				</div>
+				<div class="contact">
+					<form
+						action="${pageContext.servletContext.contextPath }/login-handle"
+						method="post">
+						<h3>회원가입</h3>
+						<input type="text" name="userId" placeholder="아이디"> <input
+							type="password" name="password" placeholder="비밀번호">
+						<button class="submit">로그인</button>
+					</form>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
