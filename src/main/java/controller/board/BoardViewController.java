@@ -27,7 +27,29 @@ public class BoardViewController extends HttpServlet {
 				BoardDao boardDao = new BoardDao();
 				Board board = boardDao.findByBoardId(boardId);
 				boardDao.increaseViews(boardId);
-				
+
+				ParticipantDao participantDao = new ParticipantDao();
+
+				List<Participant> participant = participantDao.findByEventId(boardId);
+				List<String> userIds = new ArrayList<>();
+				boolean duplicate = false;
+				if (authUser != null) {
+					for (Participant one : participant) {
+						userIds.add(one.getUserId());
+						if (one.getUserId().equals(authUser.getUserId())) {
+							duplicate = true;
+							break;
+						}
+					}
+				}
+
+				int participantNum = userIds.size();
+
+				boolean clubEvent = board.getType().equals("이벤트") && board.getCategory().equals("자체");
+
+				req.setAttribute("duplicate", duplicate);
+				req.setAttribute("participantNum", participantNum);
+				req.setAttribute("clubEvent", clubEvent);
 				req.setAttribute("board", board);
 				
 			}

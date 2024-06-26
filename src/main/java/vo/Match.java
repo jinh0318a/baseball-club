@@ -11,7 +11,7 @@ public class Match {
 	public Match() {
 		super();
 	}
-
+	
 	public Match(String matchId, Date matchDate, String location, String summary) {
 		super();
 		this.matchId = matchId;

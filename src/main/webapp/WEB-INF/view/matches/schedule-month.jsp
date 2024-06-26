@@ -6,12 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>월간 일정</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
+<div>
+<a href="${pageContext.servletContext.contextPath }/schedule" class="no-deco-link">주간 일정</a> |
+월별 일정 | 
+<a href="${pageContext.servletContext.contextPath }/schedule-team" class="no-deco-link">팀별 일정</a>
 
-	<a href="${pageContext.servletContext.contextPath }/schedule-month?month=${previous }">&lt;</a>
+</div>
+	<a href="${pageContext.servletContext.contextPath }/schedule-month?month=${previous }" class="no-deco-link">&lt;</a>
  	${month }월 일정
-	<a href="${pageContext.servletContext.contextPath }/schedule-month?month=${next }">&gt;</a>
+	<a href="${pageContext.servletContext.contextPath }/schedule-month?month=${next }" class="no-deco-link">&gt;</a>
 	
 	<c:choose>
 	<c:when test="${size != 0 }">

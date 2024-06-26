@@ -6,8 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>투수 순위</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 	<c:forEach var="i" items="${pitcherRanking }">
 	<p>순위 ${i.rank }
 	선수명 ${i.name }

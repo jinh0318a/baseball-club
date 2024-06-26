@@ -7,13 +7,22 @@
 <head>
 <meta charset="UTF-8">
 <title>주간 일정</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
+<div>
+주간 일정 |
+<a href="${pageContext.servletContext.contextPath }/schedule-month" class="no-deco-link">월별 일정</a> | 
+<a href="${pageContext.servletContext.contextPath }/schedule-team" class="no-deco-link">팀별 일정</a> 
+
+</div>
 	<div>
 		<a
-			href="${pageContext.servletContext.contextPath }/schedule?week=${lastWeek }">&lt;</a>
+			href="${pageContext.servletContext.contextPath }/schedule?week=${lastWeek }" class="no-deco-link">&lt;</a>
 		${thisWeek } ~ ${endDate } 일정 <a
-			href="${pageContext.servletContext.contextPath }/schedule?week=${nextWeek }">&gt;</a>
+			href="${pageContext.servletContext.contextPath }/schedule?week=${nextWeek }" class="no-deco-link">&gt;</a>
 	</div>
 	<div>
 		<c:choose>

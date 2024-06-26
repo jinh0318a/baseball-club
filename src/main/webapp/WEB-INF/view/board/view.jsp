@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 상세보기</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
-	<div>
-		<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	</div>
+<%@ include file="/WEB-INF/view/common/header.jsp" %>
 	<div>
 		<h3>${board.title }</h3>
 		<div style="float: left; text-indent: 10px">
@@ -19,7 +19,7 @@
 				<span>탈퇴한회원</span>
 			</c:if>
 			<span><a
-				href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }">${board.writerId }</a></span>
+				href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }" class="no-deco-link">${board.writerId }</a></span>
 		</div>
 		<div>
 			<span>작성일</span> <span>${board.writedAt}<span> | <span>조회</span>
@@ -38,23 +38,17 @@
 		</form>
 	</div>
 	<div>
-		<c:forEach var="i" items="${comments }">
-			<p>
-				작성자 ${i.writerId } 내용 ${i.body } 날짜 ${i.writedAt }
-				<c:if
-					test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
-					<a
-						href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }">좋아요
-						${i.like }</a>
-				</c:if>
-				<c:if test="${sessionScope.authUser.userId == i.writerId }">
-					<a
-						href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button
-							type="button">삭제</button></a>
-				</c:if>
-			</p>
-		</c:forEach>
-	</div>
+	<c:forEach var="i" items="${comments }">
+	<p>작성자 ${i.writerId } 내용 ${i.body } 날짜 ${i.writedAt } 좋아요 ${i.like }
+	<c:if test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
+	<a href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }" class="no-deco-link">추천</a>
+	</c:if>
+	<c:if test="${sessionScope.authUser.userId == i.writerId }">
+	<a href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button type="button">삭제</button></a>
+	</c:if>
+	</p>
+	</c:forEach>
+
 	<div>
 		<c:if test="${clubEvent && !duplicate}">
 			<span>현재 참여 인원 : ${participantNum }</span>
@@ -70,7 +64,6 @@
 				<button type="button">참가취소</button>
 			</a>
 		</c:if>
-
 	</div>
 	<div style="text-align: right;">
 
