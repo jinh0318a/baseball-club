@@ -37,7 +37,7 @@
 		<a href="${pageContext.servletContext.contextPath }/team-ranking">순위</a>
 		<a href="${pageContext.servletContext.contextPath }/schedule">경기일정</a>
 		<a href="${pageContext.servletContext.contextPath }/record">기록실</a>
-		<a>전체게시판</a>
+		<a href="${pageContext.servletContext.contextPath }/board/list">전체게시판</a>
 		<a>구단게시판</a>
 		<a>거래게시판</a>
 	</div>
