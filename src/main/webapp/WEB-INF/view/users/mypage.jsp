@@ -8,6 +8,6 @@
 </head>
 <body>
 <a href="${pageContext.servletContext.contextPath }/modify">정보수정</a>
-<a>팔로잉</a>
+<a href="${pageContext.servletContext.contextPath }/following">팔로잉</a>
 </body>
 </html>

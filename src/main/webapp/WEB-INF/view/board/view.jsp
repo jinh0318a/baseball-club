@@ -18,7 +18,8 @@
 			<c:if test="${empty board.writerId }">
 				<span>탈퇴한회원</span>
 			</c:if>
-			<span>${board.writerId }</span>
+			<span><a
+				href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }">${board.writerId }</a></span>
 		</div>
 		<div>
 			<span>작성일</span> <span>${board.writedAt}<span> | <span>조회</span>
@@ -27,25 +28,53 @@
 		<p
 			style="padding: 60px 10px 30px 10px; border-bottom: 1px solid #ccc;">
 			${board.body }</p>
-
+	</div>
+	<div>
+		<form action="${pageContext.servletContext.contextPath }/comment-new"
+			method="post">
+			<input type="hidden" name="boardId" value="${board.boardId }">
+			<textarea rows="" cols="" name="commentBody"></textarea>
+			<button type="submit">작성</button>
+		</form>
+	</div>
+	<div>
+		<c:forEach var="i" items="${comments }">
+			<p>
+				작성자 ${i.writerId } 내용 ${i.body } 날짜 ${i.writedAt }
+				<c:if
+					test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
+					<a
+						href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }">좋아요
+						${i.like }</a>
+				</c:if>
+				<c:if test="${sessionScope.authUser.userId == i.writerId }">
+					<a
+						href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button
+							type="button">삭제</button></a>
+				</c:if>
+			</p>
+		</c:forEach>
 	</div>
 	<div>
 		<c:if test="${clubEvent && !duplicate}">
 			<span>현재 참여 인원 : ${participantNum }</span>
-			<a href="${pageContext.servletContext.contextPath }/participant?boardId=${board.boardId}">
+			<a
+				href="${pageContext.servletContext.contextPath }/participant?boardId=${board.boardId}">
 				<button type="button">참가신청</button>
 			</a>
 		</c:if>
 		<c:if test="${clubEvent && duplicate }">
 			<span>현재 참여 인원 : ${participantNum }</span>
-			<a href="${pageContext.servletContext.contextPath }/participant/cancel?boardId=${board.boardId}">
+			<a
+				href="${pageContext.servletContext.contextPath }/participant/cancel?boardId=${board.boardId}">
 				<button type="button">참가취소</button>
 			</a>
 		</c:if>
 
 	</div>
 	<div style="text-align: right;">
-		<c:if test="${sessionScope.authUser.userId == board.writerId }">
+
+		<c:if test="${sessionScope.authUser.userId == board.writerId}">
 			<a
 				href="${pageContext.servletContext.contextPath }/board/delete?boardId=${board.boardId }">
 				<button type="button">삭제</button>

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.BoardDao;
+import dao.CommentDao;
 import dao.ParticipantDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vo.Board;
+import vo.Comment;
 import vo.Participant;
 import vo.User;
 
@@ -26,6 +28,7 @@ public class BoardViewController extends HttpServlet {
 
 			if (req.getParameter("boardId") == null) {
 				resp.sendRedirect(req.getContextPath() + "/board/list");
+				return;
 			} else {
 
 				BoardDao boardDao = new BoardDao();
@@ -44,15 +47,20 @@ public class BoardViewController extends HttpServlet {
 						break;
 					}
 				}
-				
+
 				int participantNum = userIds.size();
-				
+
 				boolean clubEvent = board.getType().equals("이벤트") && board.getCategory().equals("자체");
 
 				req.setAttribute("duplicate", duplicate);
 				req.setAttribute("participantNum", participantNum);
 				req.setAttribute("clubEvent", clubEvent);
 				req.setAttribute("board", board);
+
+				CommentDao commentDao = new CommentDao();
+				List<Comment> comments = commentDao.findByBoardId(boardId);
+				req.setAttribute("board", board);
+				req.setAttribute("comments", comments);
 
 			}
 

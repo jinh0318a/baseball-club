@@ -105,7 +105,6 @@ public class UserDao {
 			e.printStackTrace();
 			return false;
 		}
-
 	}
 	
 	
