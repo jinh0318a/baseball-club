@@ -12,7 +12,7 @@
 	<div>
 		<a
 			href="${pageContext.servletContext.contextPath }/schedule?week=${lastWeek }">&lt;</a>
-		이번주 일정 <a
+		${thisWeek } ~ ${endDate } 일정 <a
 			href="${pageContext.servletContext.contextPath }/schedule?week=${nextWeek }">&gt;</a>
 	</div>
 	<div>
