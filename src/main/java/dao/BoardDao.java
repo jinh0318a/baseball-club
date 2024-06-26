@@ -271,7 +271,7 @@ public class BoardDao {
 		}
 	}
 	
-	public List<Board> SearchBoardByType(String type) throws Exception {
+	public List<Board> searchBoardByType(String type) throws Exception {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
 		ods.setUser("baseball_club");
