@@ -5,6 +5,8 @@
 <html>
 <head>
 	<script src="https://kit.fontawesome.com/053f0cac61.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
 	<div style="display: flex; justify-content:space-between;">
@@ -23,23 +25,23 @@
 		<div style="justify-content:space-between; gap: 10px;">
 			<c:choose>
 				<c:when test="${sessionScope.authUser == null }">
-					<a href="${pageContext.servletContext.contextPath }/login">로그인</a>
-					<a href="${pageContext.servletContext.contextPath }/join">회원가입</a>
+					<a href="${pageContext.servletContext.contextPath }/login" class="no-deco-link">로그인</a>
+					<a href="${pageContext.servletContext.contextPath }/join" class="no-deco-link">회원가입</a>
 				</c:when>
 				<c:otherwise>
-					<a href="${pageContext.servletContext.contextPath }/mypage">마이페이지</a>
-					<a href="${pageContext.servletContext.contextPath }/logout">로그아웃</a>
+					<a href="${pageContext.servletContext.contextPath }/mypage" class="no-deco-link">마이페이지</a>
+					<a href="${pageContext.servletContext.contextPath }/logout" class="no-deco-link">로그아웃</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
 	</div>
 	<div style="align-items: center;">
-		<a href="${pageContext.servletContext.contextPath }/team-ranking">순위</a>
-		<a href="${pageContext.servletContext.contextPath }/schedule">경기일정</a>
-		<a href="${pageContext.servletContext.contextPath }/record">기록실</a>
-		<a href="${pageContext.servletContext.contextPath }/board/list">자유게시판</a>
-		<a href="${pageContext.servletContext.contextPath }/board/club">구단게시판</a>
-		<a href="${pageContext.servletContext.contextPath }/board/event">이벤트게시판</a>
+		<a href="${pageContext.servletContext.contextPath }/team-ranking" class="no-deco-link">순위</a>
+		<a href="${pageContext.servletContext.contextPath }/schedule" class="no-deco-link">경기일정</a>
+		<a href="${pageContext.servletContext.contextPath }/record" class="no-deco-link">기록실</a>
+		<a href="${pageContext.servletContext.contextPath }/board/list" class="no-deco-link">자유게시판</a>
+		<a href="${pageContext.servletContext.contextPath }/board/club" class="no-deco-link">구단게시판</a>
+		<a href="${pageContext.servletContext.contextPath }/board/event" class="no-deco-link">이벤트게시판</a>
 	</div>
 </body>
 </html>

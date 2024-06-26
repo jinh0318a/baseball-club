@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>검색</title>
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/view/common/header.jsp" %>
@@ -30,7 +32,7 @@
 		<c:forEach var="one" items="${boards }">
 			<p>
 				${one.boardId } ${one.type } ${one.category } <a
-					href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }">
+					href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }" class="no-deco-link">
 					${one.title } </a> ${one.writerId }
 			</p>
 		</c:forEach>
