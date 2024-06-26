@@ -48,23 +48,56 @@
 			</div>
 		</form>
 	</div>
-	<section class="login">
-		<div class="login_box">
+	<section class="sign">
+		<div class="sign_box">
 			<div class="left">
 				<div class="top_link">
 					<a href="${pageContext.servletContext.contextPath }/index"> <i
 						class="fa-solid fa-baseball-bat-ball fa-1x no-deco-link"></i>
-					</a> <a href="${pageContext.servletContext.contextPath }/join"
-						class="no-deco-link"">회원가입</a>
+					</a>
 				</div>
 				<div class="contact">
 					<form
 						action="${pageContext.servletContext.contextPath }/login-handle"
 						method="post">
 						<h3>회원가입</h3>
-						<input type="text" name="userId" placeholder="아이디"> <input
-							type="password" name="password" placeholder="비밀번호">
-						<button class="submit">로그인</button>
+						<div>
+							아이디 <input type="text" name="userId">
+						</div>
+						<div>
+							비밀번호 <input type="password" name="password">
+						</div>
+						<div>
+							닉네임 <input type="text" name="nickname">
+						</div>
+						<div>
+							생년월일 <input type="date" name="birth">
+						</div>
+						<div class="d-flex float-left g-1 space-between x-1">
+							<span>성별</span>
+							<input type="radio" name="gender" value="남" />남 
+							<input type="radio" name="gender" value="여" />여
+						</div>
+						<div class="x-1">
+							이메일 <input type="text" name="email">
+						</div>
+						<div>
+							선호구단
+							<div class="d-flex space-between">
+								<input type="radio" name="club" value="LG트윈스">LG <input
+									type="radio" name="club" value="KT위즈">KT <input
+									type="radio" name="club" value="SSG랜더스">SSG <input
+									type="radio" name="club" value="NC다이노스">NC <input
+									type="radio" name="club" value="두산베어스">두산<input
+									type="radio" name="club" value="KIA타이거즈">KIA <input
+									type="radio" name="club" value="롯데자이언츠">롯데 <input
+									type="radio" name="club" value="삼성라이온즈">삼성 <input
+									type="radio" name="club" value="한화이글스">한화 <input
+									type="radio" name="club" value="키움히어로즈">키움
+							</div>
+						</div>
+
+						<button class="submit">회원가입</button>
 					</form>
 					<div></div>
 				</div>
