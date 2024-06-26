@@ -19,7 +19,8 @@
 			<c:if test="${empty board.writerId }">
 				<span>탈퇴한회원</span>
 			</c:if>
-			<span><a href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }">${board.writerId }</a></span>
+			<span><a
+				href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }">${board.writerId }</a></span>
 		</div>
 		<div>
 			<span>작성일</span> <span>${board.writedAt}<span> | <span>조회</span>
@@ -30,11 +31,12 @@
 			${board.body }</p>
 	</div>
 	<div>
-	<form action="${pageContext.servletContext.contextPath }/comment-new" method="post">
-	<input type="hidden" name="boardId" value="${board.boardId }">
-	<textarea rows="" cols="" name="commentBody"></textarea>
-	<button type="submit">작성</button>
-	</form>	
+		<form action="${pageContext.servletContext.contextPath }/comment-new"
+			method="post">
+			<input type="hidden" name="boardId" value="${board.boardId }">
+			<textarea rows="" cols="" name="commentBody"></textarea>
+			<button type="submit">작성</button>
+		</form>
 	</div>
 	<div>
 	<c:forEach var="i" items="${comments }">
@@ -47,13 +49,32 @@
 	</c:if>
 	</p>
 	</c:forEach>
+
+	<div>
+		<c:if test="${clubEvent && !duplicate}">
+			<span>현재 참여 인원 : ${participantNum }</span>
+			<a
+				href="${pageContext.servletContext.contextPath }/participant?boardId=${board.boardId}">
+				<button type="button">참가신청</button>
+			</a>
+		</c:if>
+		<c:if test="${clubEvent && duplicate }">
+			<span>현재 참여 인원 : ${participantNum }</span>
+			<a
+				href="${pageContext.servletContext.contextPath }/participant/cancel?boardId=${board.boardId}">
+				<button type="button">참가취소</button>
+			</a>
+		</c:if>
 	</div>
 	<div style="text-align: right;">
+
 		<c:if test="${sessionScope.authUser.userId == board.writerId}">
-			<a href="${pageContext.servletContext.contextPath }/board/delete?boardId=${board.boardId }">
+			<a
+				href="${pageContext.servletContext.contextPath }/board/delete?boardId=${board.boardId }">
 				<button type="button">삭제</button>
 			</a>
-			<a href="${pageContext.servletContext.contextPath }/board/update?boardId=${board.boardId }">
+			<a
+				href="${pageContext.servletContext.contextPath }/board/update?boardId=${board.boardId }">
 				<button type="button">수정</button>
 			</a>
 		</c:if>
