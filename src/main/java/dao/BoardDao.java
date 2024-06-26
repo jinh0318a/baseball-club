@@ -111,7 +111,7 @@ public class BoardDao {
 				one.setTitle(rs.getString("title"));
 				one.setBody(rs.getString("body"));
 				one.setViews(rs.getInt("views"));
-				one.setWritedAt(rs.getDate("write_at"));
+				one.setWritedAt(rs.getDate("writed_at"));
 				one.setCategory(rs.getString("category"));
 				one.setType(rs.getString("type"));
 				board.add(one);
@@ -178,7 +178,7 @@ public class BoardDao {
 				one.setTitle(rs.getString("title"));
 				one.setBody(rs.getString("body"));
 				one.setViews(rs.getInt("views"));
-				one.setWritedAt(rs.getDate("write_at"));
+				one.setWritedAt(rs.getDate("writed_at"));
 				one.setCategory(rs.getString("category"));
 				one.setType(rs.getString("type"));
 				board.add(one);
@@ -271,7 +271,39 @@ public class BoardDao {
 		}
 	}
 	
-	
+	public List<Board> SearchBoardByType(String type) throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM BOARDS WHERE TYPE=? ORDER BY WRITED_AT DESC");
+			stmt.setString(1, type);
+
+			ResultSet rs = stmt.executeQuery();
+			List<Board> board = new ArrayList<>();
+			while (rs.next()) {
+				Board one = new Board();
+				one.setBoardId(rs.getInt("board_id"));
+				one.setWriterId(rs.getString("writer_id"));
+				one.setTitle(rs.getString("title"));
+				one.setBody(rs.getString("body"));
+				one.setViews(rs.getInt("views"));
+				one.setWritedAt(rs.getDate("writed_at"));
+				one.setCategory(rs.getString("category"));
+				one.setType(rs.getString("type"));
+				board.add(one);
+
+			}
+
+			return board;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 	
 }

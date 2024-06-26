@@ -12,12 +12,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vo.Board;
 
-@WebServlet("/board/list")
-public class BoardListController extends HttpServlet {
+@WebServlet("/board/event")
+public class BoardEventsController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		try {
 			int p = req.getParameter("p") == null ? 1 : Integer.parseInt(req.getParameter("p"));
 
@@ -32,22 +31,20 @@ public class BoardListController extends HttpServlet {
 			int count = boardDao.countAll();
 			int totalPages = count / size + (count % size > 0 ? 1 : 0);
 			
-			List<Board> boardList = new ArrayList<Board>();
+			List<Board> eventBoard = new ArrayList<Board>();
 			for(Board one : board) {
 				String type = one.getType();
-				if(type.equals("광장")) {
+				if(type.equals("이벤트")) {
 					boardDao.SearchBoardByType(type);
-					boardList.add(one);
+					eventBoard.add(one);
 				}
 			}
 			
-			req.setAttribute("boardList", boardList);
+			req.setAttribute("eventBoard", eventBoard);
 			
-			req.getRequestDispatcher("/WEB-INF/view/board/list.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/view/board/eventList.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 }
