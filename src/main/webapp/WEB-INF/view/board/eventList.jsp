@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="/WEB-INF/view/common/header.jsp"%>
-
+<div>
+		<%@ include file="/WEB-INF/view/common/header.jsp"%>
+	</div>
 	<div>
 		<a href="${pageContext.servletContext.contextPath }/board/new">새글작성</a>
 	</div>
@@ -23,7 +23,7 @@
 				<th>작성자</th>
 				<th>작성일</th>
 			</tr>
-			<c:forEach var="one" items="${boardList }">
+			<c:forEach var="one" items="${eventBoard }">
 				<tr>
 					<td>${one.boardId }</td>
 					<td>${one.type }</td>
