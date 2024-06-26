@@ -189,7 +189,7 @@ public class FollowDao {
 			
 			int r = stmt.executeUpdate();
 
-			return r == 1 ? true : false;
+			return r >= 0 ? true : false;
 
 		} catch (Exception e) {
 			e.printStackTrace();
