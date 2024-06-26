@@ -27,10 +27,28 @@
 		<p
 			style="padding: 60px 10px 30px 10px; border-bottom: 1px solid #ccc;">
 			${board.body }</p>
-
+	</div>
+	<div>
+	<form action="${pageContext.servletContext.contextPath }/comment-new" method="post">
+	<input type="hidden" name="boardId" value="${board.boardId }">
+	<textarea rows="" cols="" name="commentBody"></textarea>
+	<button type="submit">작성</button>
+	</form>	
+	</div>
+	<div>
+	<c:forEach var="i" items="${comments }">
+	<p>작성자 ${i.writerId } 내용 ${i.body } 날짜 ${i.writedAt }
+	<c:if test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
+	<a href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }">좋아요 ${i.like }</a>
+	</c:if>
+	<c:if test="${sessionScope.authUser.userId == i.writerId }">
+	<a href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button type="button">삭제</button></a>
+	</c:if>
+	</p>
+	</c:forEach>
 	</div>
 	<div style="text-align: right;">
-		<c:if test="${userId }">
+		<c:if test="${sessionScope.authUser.userId == board.writerId}">
 			<a href="${pageContext.servletContext.contextPath }/board/delete?boardId=${board.boardId }">
 				<button type="button">삭제</button>
 			</a>
