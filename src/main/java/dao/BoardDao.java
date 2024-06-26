@@ -209,6 +209,24 @@ public class BoardDao {
 			return false;
 		}
 	}
+	
+	public boolean deleteByWriterId(String boardId) throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("DELETE FROM BOARDS WHERE WRITER_ID=?");
+			stmt.setString(1, boardId);
+
+			int r = stmt.executeUpdate();
+
+			return r == 1 ? true : false;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 
 	public boolean updateWrite(Board board) throws SQLException {
 		OracleDataSource ods = new OracleDataSource();

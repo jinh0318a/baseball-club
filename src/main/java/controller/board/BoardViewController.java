@@ -23,15 +23,13 @@ public class BoardViewController extends HttpServlet {
 			if (req.getParameter("boardId") == null) {
 				resp.sendRedirect(req.getContextPath() + "/board/list");
 			} else {
-
+				
 				BoardDao boardDao = new BoardDao();
 				Board board = boardDao.findByBoardId(boardId);
 				boardDao.increaseViews(boardId);
-
-				boolean userId = authUser.getUserId().equals(board.getWriterId());
-
+				
 				req.setAttribute("board", board);
-				req.setAttribute("userId", userId);
+				
 			}
 
 			req.getRequestDispatcher("/WEB-INF/view/board/view.jsp").forward(req, resp);

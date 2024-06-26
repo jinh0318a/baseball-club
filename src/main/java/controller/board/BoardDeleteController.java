@@ -28,7 +28,7 @@ public class BoardDeleteController extends HttpServlet {
 			
 			if(found == null || found.getWriterId() == null || !found.getWriterId().equals(authUser.getUserId())) {
 				result = false;
-				resp.sendRedirect(req.getContextPath()+"/board/error");
+				resp.sendRedirect(req.getContextPath()+"/error");
 			}else {
 				result = boardDao.deleteWriteView(boardId);
 				resp.sendRedirect(req.getContextPath()+"/board/list");

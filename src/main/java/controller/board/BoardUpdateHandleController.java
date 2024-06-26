@@ -48,7 +48,7 @@ public class BoardUpdateHandleController extends HttpServlet {
 
 			if (!board.getWriterId().equals(authUser.getUserId())) {
 				result = false;
-				resp.sendRedirect(req.getContextPath() + "/board/error");
+				resp.sendRedirect(req.getContextPath() + "/error");
 			} else {
 				result = boardDao.updateWrite(temp);
 				resp.sendRedirect(req.getContextPath() + "/board/list");
