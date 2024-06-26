@@ -28,14 +28,15 @@
 				</c:when>
 				<c:otherwise>
 					<a href="${pageContext.servletContext.contextPath }/mypage">마이페이지</a>
+					<a href="${pageContext.servletContext.contextPath }/logout">로그아웃</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
 	</div>
 	<div style="align-items: center;">
-		<a>순위</a>
-		<a>경기일정</a>
-		<a>기록실</a>
+		<a href="${pageContext.servletContext.contextPath }/team-ranking">순위</a>
+		<a href="${pageContext.servletContext.contextPath }/schedule">경기일정</a>
+		<a href="${pageContext.servletContext.contextPath }/record">기록실</a>
 		<a href="${pageContext.servletContext.contextPath }/board/list">전체게시판</a>
 		<a>구단게시판</a>
 		<a>거래게시판</a>
