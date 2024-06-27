@@ -8,6 +8,16 @@
   font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+*{
+  box-sizing: border-box;
+  font-family: "Orbit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 a {
 	text-decoration: none;
 }
@@ -40,46 +50,60 @@ a {
 .align-left {
 	align-items: flex-start;
 }
+
 .align-right {
 	align-items: flex-end;
 }
 
-.align-center{
+.align-center {
 	align-items: center;
 }
+
 .space-left {
 	justify-content: flex-start;
 }
+
 .space-right {
 	justify-content: flex-end;
 }
+
 .space-right2 {
 	justify-content: flex-end;
 	gap: 10px;
 }
+
 .space-between {
 	justify-content: space-between;
 }
-.space-center{
+
+.space-center {
 	justify-content: center;
 }
+
 .space-bg {
 	justify-content: space-between;
 	gap: 10px;
 }
-.g-1{
+.g-05 {
+	gap: 5px;
+}
+.g-1 {
 	gap: 10px;
 }
-.g-2{
+
+.g-2 {
 	gap: 20px;
 }
-.g-3{
+
+.g-3 {
 	gap: 30px;
 }
-.g-4{
+
+.g-4 {
 	gap: 40px;
 }
-.g-5{
+
+.g-5 {
 	gap: 50px;
 }
 
@@ -100,6 +124,7 @@ a {
 	border: 1px solid #999;
 	border-radius: 4px;
 }
+
 .border-rounded2 {
 	border: 1px solid #c0c0c0;
 	border-radius: 10px;
@@ -116,29 +141,39 @@ a {
 .text-right {
 	text-align: right;
 }
-.float-left{
+
+.float-left {
 	float: left;
 }
-.float-right{
+
+.float-right {
 	float: right;
 }
-.float-inherit{
+
+.float-inherit {
 	float: inherit;
+}
+.verical-align{
+	vertical-align:50px;
 }
 
 /* 글씨 색상 클래스 */
 .warning {
 	color: red;
 }
-.emphasize{
+
+.emphasize {
 	color: #fd5740;
 }
-.logon{
+
+.logon {
 	color: #0080ff;
 }
-.hash{
+
+.hash {
 	color: #0080c0;
 }
+
 .fs-1 {
 	font-size: 2rem;
 }
@@ -163,10 +198,11 @@ a {
 	font-size: 0.65rem;
 }
 /* 글씨 두께 */
-.fw-1{
+.fw-1 {
 	font-weight: lighter;
 }
-.fw-2{
+
+.fw-2 {
 	font-weight: bold;
 }
 /* 기본 패딩 클래스 */
@@ -189,9 +225,11 @@ a {
 .p-5 {
 	padding: 20px;
 }
+
 .p-6 {
 	padding: 30px;
 }
+
 .px-1 {
 	padding-left: 4px;
 	padding-right: 4px;
@@ -218,9 +256,10 @@ a {
 }
 
 /* 기본 마진 클래스 */
-.mx{
-	margin : auto;
+.mx {
+	margin: auto;
 }
+
 .mx-1 {
 	margin: auto 4px;
 }
@@ -275,47 +314,223 @@ a {
 	background-color: #aed2f7;
 	color: white;
 }
-.align-right-b{
-	border:1px solid #fefdc2;
+
+.align-right-b {
+	border: 1px solid #fefdc2;
 	border-radius: 10px;
-	background-color : #fde46f;
-	color:fw-2;
-	padding:5px;
+	background-color: #fde46f;
+	color: fw-2;
+	padding: 5px;
 	margin: 10px;
 	cursor: pointer;
 	float: right;
 }
+
 .b2:hover {
 	background-color: #f8bc1f;
 	color: white;
 }
 /* 박스 클래스 */
-.box-s1{
+.box-s1 {
 	width: 720px;
 	height: 100px;
 	margin: auto;
 }
-.box-s2{
+
+.box-s2 {
 	width: 720px;
 	height: 400px;
 	margin: auto;
 }
-.search-box{
+
+.search-box {
 	width: 360px;
 	height: 30px;
 	margin: auto;
 	text-align: right;
 	padding-right: 30px;
 }
-.fa-search{
-    position: relative;
+
+.fa-search {
+	position: relative;
 }
-.fa-search::before{
+
+.fa-search::before {
 	display: none;
 }
-.icon-search{
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    color: #999;
+
+.icon-search {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	color: #999;
 }
+/* 로그인 클래스 */
+
+.login {
+	height: 800px;
+	width: 100%;
+	position: relative;
+}
+
+.login_box {
+	width: 250x;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	display: flex;
+	overflow: hidden;
+}
+
+.login_box .left {
+	width: 100%;
+	height: 100%;
+	padding: 25px 25px;
+}
+
+.left .top_link a {
+	color: #452A5A;
+	font-weight: 400;
+}
+
+.left .top_link {
+	height: 20px
+}
+
+.left .contact {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	height: 100%;
+	width: 73%;
+	margin: auto;
+}
+
+.left h3 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.left input {
+	border: none;
+	width: 80%;
+	margin: 15px 0px;
+	border-bottom: 1px solid #4f30677d;
+	padding: 7px 9px;
+	width: 100%;
+	overflow: hidden;
+	background: transparent;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.left {
+	background: linear-gradient(-45deg, #dcd7e0, #fff);
+}
+
+.submit {
+	border: none;
+	padding: 15px 70px;
+	border-radius: 8px;
+	display: block;
+	margin: auto;
+	margin-top:80px;
+	background: #0f4279;
+	color: #fff;
+	font-weight: bold;
+	-webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+	-moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+	box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+}
+
+/* 회원가입 클래스 */
+
+.sign {
+	margin: auto;
+	height: 800px;
+	width: 100%;
+	position: relative;
+}
+
+.sign_box {
+	width: 700px;
+	height: 900px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	display: flex;
+	overflow: hidden;
+}
+
+.sign_box .left {
+	width: 100%;
+	height: 100%;
+	padding: 25px 25px;
+}
+
+.left .top_link a {
+	color: #452A5A;
+	font-weight: 400;
+}
+
+.left .top_link {
+	height: 20px
+}
+
+.left .contacts {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	height: 80%;
+	width: 80%;
+	margin: 50px auto;
+}
+
+.left h3 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.left input {
+	border: none;
+	width: 80%;
+	margin: 15px 0px;
+	border-bottom: 1px solid #4f30677d;
+	padding: 7px 9px;
+	width: 100%;
+	overflow: hidden;
+	background: transparent;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.left {
+	background: linear-gradient(-45deg, #dcd7e0, #fff);
+}
+
+.submit {
+	border: none;
+	padding: 15px 70px;
+	border-radius: 8px;
+	display: block;
+	margin: auto;
+	margin-top:80px;
+	background: #0f4279;
+	color: #fff;
+	font-weight: bold;
+	-webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+	-moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+	box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+}
+
