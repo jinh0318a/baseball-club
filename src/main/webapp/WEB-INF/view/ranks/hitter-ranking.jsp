@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,24 +10,53 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
-<%@ include file="/WEB-INF/view/common/header.jsp" %>
-	<c:forEach var="i" items="${hitterRanking }">
-	<p>
-	순위 ${i.rank }
-	선수명 ${i.name }
-	팀명 ${i.teamName }
-	타율 ${i.average }
-	경기수 ${i.game }
-	타석 ${i.pa }
-	타수 ${i.atBats }
-	득점 ${i.score }
-	안타 ${i.hit }
-	홈런 ${i.homerun }
-	RBI ${i.rbi }
-	볼넷 ${i.bb }
-	삼진 ${i.so }
-	OPS ${i.ops }
-	</p>
-	</c:forEach>
+	<%@ include file="/WEB-INF/view/common/header.jsp"%>
+	<div style="padding: 8px; margin: auto; width: 1140px;">
+		<div style="margin: auto; text-align: center; margin-bottom: 8px;">
+			<span style="color: hotpink;">타자 순위</span> | <a
+				href="${pageContext.servletContext.contextPath }/pitcher-ranking"
+				class="no-deco-link">투수 순위</a>
+		</div>
+		<div>
+			<table
+				style="margin-left: auto; margin-right: auto; text-align: center">
+				<tr>
+					<th style="width: 5%;">순위</th>
+					<th style="width: 5%;">선수명</th>
+					<th style="width: 5%;">팀명</th>
+					<th style="width: 5%;">타율</th>
+					<th style="width: 5%;">경기수</th>
+					<th style="width: 5%;">타석</th>
+					<th style="width: 5%;">타수</th>
+					<th style="width: 5%;">득점</th>
+					<th style="width: 5%;">안타</th>
+					<th style="width: 5%;">홈런</th>
+					<th style="width: 5%;">RBI</th>
+					<th style="width: 5%;">볼넷</th>
+					<th style="width: 5%;">삼진</th>
+					<th style="width: 5%;">OPS</th>
+				</tr>
+
+				<c:forEach var="i" items="${hitterRanking }">
+					<tr>
+						<td>${i.rank }</td>
+						<td>${i.name }</td>
+						<td>${i.teamName }</td>
+						<td>${i.average }</td>
+						<td>${i.game }</td>
+						<td>${i.pa }</td>
+						<td>${i.atBats }</td>
+						<td>${i.score }</td>
+						<td>${i.hit }</td>
+						<td>${i.homerun }</td>
+						<td>${i.rbi }</td>
+						<td>${i.bb }</td>
+						<td>${i.so }</td>
+						<td>${i.ops }</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
 </body>
 </html>

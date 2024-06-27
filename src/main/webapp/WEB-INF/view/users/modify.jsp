@@ -9,7 +9,7 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
-
+<div style="padding: 8px; margin: auto; width: 1140px; margin:auto; width:540px;">
 	<form action="${pageContext.servletContext.contextPath }/modify-handle" method="post">
 		<div>아이디 ${sessionScope.authUser.userId }</div>
 		<div>
@@ -41,6 +41,6 @@
 			<button type="submit">수정</button>
 		</div>
 	</form>
-
+</div>
 </body>
 </html>
