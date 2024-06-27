@@ -11,19 +11,26 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
-<%@ include file="/WEB-INF/view/common/header.jsp" %>
-<div>
-팔로어 목록 ${follower }명
-<c:forEach var="i" items="${follwers }">
-<a href="${pageContext.servletContext.contextPath }/profile?userId=${i.followerId }" class="no-deco-link">${i.followerId }</a>
-</c:forEach>
-</div>
-<div>
-팔로잉 목록 ${following }명
-<c:forEach var="i" items="${followings }">
-<a href="${pageContext.servletContext.contextPath }/profile?userId=${i.followingId }" class="no-deco-link">${i.followingId }</a>
-</c:forEach>
-</div>
+	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 
+	<div class="follow">
+		<div class="text-right">
+			<a href="${pageContext.servletContext.contextPath }/mypage"> <i
+				class="fa-solid fa-user no-deco-link mx-2"></i>
+			</a>
+		</div>
+		<div>
+			<span>${sessionScope.authUser.userId }님의 💙</span>
+		</div>
+		<div class="d-flex g-1 justify-center my-6 fs-1 ">
+			<span>팔로워</span> <a class="no-deco-link"
+				href="${pageContext.servletContext.contextPath }/follower/list">
+				<span class="hash fw-b">${follower }</span><span>명</span>
+			</a>
+			<span>팔로잉</span> <a class="no-deco-link"
+				href="${pageContext.servletContext.contextPath }/following/list"><span
+				class="hash fw-b">${following }</span><span>명</span></a>
+		</div>
+	</div>
 </body>
 </html>
