@@ -185,5 +185,28 @@ public class CommentDao {
 		}
 
 	}
+	
+	public int countComment(int boardId) throws SQLException {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+
+			PreparedStatement stmt = conn.prepareStatement("select count(*) from comments where board_id=?");
+			stmt.setInt(1, boardId);
+			
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}else {
+				return -1;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+
+	}
 
 }

@@ -22,7 +22,7 @@ public class ParticipantDao {
 
 			PreparedStatement stmt = conn
 					.prepareStatement("INSERT INTO PARTICIPANTS VALUES (PARTICIPANTS_SEQ.NEXTVAL,?, ?, ?)");
-			
+
 			stmt.setInt(1, participant.getEventId());
 			stmt.setString(2, participant.getUserId());
 			stmt.setDate(3, participant.getJoinAt());
@@ -35,8 +35,8 @@ public class ParticipantDao {
 			return false;
 		}
 	}
-	
-	public List<Participant> findByEventId(int eventId) throws SQLException  {
+
+	public List<Participant> findByEventId(int eventId) throws SQLException {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
 		ods.setUser("baseball_club");
@@ -65,8 +65,8 @@ public class ParticipantDao {
 			return null;
 		}
 	}
-	
-	public List<Participant> findByUserId(String userId) throws SQLException  {
+
+	public List<Participant> findByUserId(String userId) throws SQLException {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
 		ods.setUser("baseball_club");
@@ -95,26 +95,47 @@ public class ParticipantDao {
 			return null;
 		}
 	}
-	
+
 	public boolean cancelParticipant(String userId) throws SQLException {
 		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
 		ods.setUser("baseball_club");
 		ods.setPassword("oracle");
-		
-		try(Connection conn = ods.getConnection()) {
+
+		try (Connection conn = ods.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("DELETE FROM participants WHERE USER_ID=?");
 			stmt.setString(1, userId);
 
 			int r = stmt.executeUpdate();
 
 			return r == 1 ? true : false;
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
 	}
-	
-	
+
+	public int countCapacity(int eventId) throws SQLException {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+
+			PreparedStatement stmt = conn.prepareStatement("select count(*) from participants where event_id=?");
+			stmt.setInt(1, eventId);
+
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1);
+			} else {
+				return -1;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+
+	}
 }
