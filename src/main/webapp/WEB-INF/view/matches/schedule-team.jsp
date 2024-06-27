@@ -13,18 +13,18 @@
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<div class="schedule-area">
-		<div class="schedule-list">
-			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
+		<div class="schedule-team-list">
+			<div class="schedule-button">
 				<a href="${pageContext.servletContext.contextPath }/schedule"
-					class="no-deco-link">주간 일정</a> | <a
+					class="no-deco-link"><button class="b-3">주간 일정</button></a><a
 					href="${pageContext.servletContext.contextPath }/schedule-month"
-					class="no-deco-link">월별 일정</a> | <span style="color: hotpink">팀별
-					일정</span>
+					class="no-deco-link"><button class="b-3">월별 일정</button></a>
+				<button class="b-4">팀별 일정</button>
 			</div>
 			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
 				<c:choose>
 					<c:when test="${teamName == 'LG' }">
-						<span style="color: red;">LG</span>
+						<span style="color: #a50034;">LG</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -46,7 +46,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == 'SSG' }">
-						<span style="color: red;">SSG</span>
+						<span style="color: #ce0e2d;">SSG</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -57,7 +57,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == 'NC' }">
-						<span style="color: red;">NC</span>
+						<span style="color: #5c8ebb;">NC</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -68,7 +68,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == '두산' }">
-						<span style="color: red;">두산</span>
+						<span style="color: #131230;">두산</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -79,7 +79,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == 'KIA' }">
-						<span style="color: red;">KIA</span>
+						<span style="color: #760c0c;">KIA</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -90,7 +90,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == '롯데' }">
-						<span style="color: red;">롯데</span>
+						<span style="color: #041e42;">롯데</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -101,7 +101,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == '삼성' }">
-						<span style="color: red;">삼성</span>
+						<span style="color: #074ca1;">삼성</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -112,7 +112,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == '한화' }">
-						<span style="color: red;">한화</span>
+						<span style="color: #FF6600;">한화</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -123,7 +123,7 @@
 				|
 				<c:choose>
 					<c:when test="${teamName == '키움' }">
-						<span style="color: red;">키움</span>
+						<span style="color: #972546;">키움</span>
 					</c:when>
 					<c:otherwise>
 						<a
@@ -135,8 +135,8 @@
 			<div class="move-schedule">
 				<a
 					href="${pageContext.servletContext.contextPath }/schedule-month?month=${previous }"
-					class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a> <span class="emphasize">${month }</span>월
-				일정 <a
+					class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a>
+				<span class="emphasize">${month }</span>월 일정 <a
 					href="${pageContext.servletContext.contextPath }/schedule-month?month=${next }"
 					class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
 			</div>
@@ -146,8 +146,7 @@
 						<table
 							style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 0;">
 							<thead>
-								<tr class="tr-${param.teamName }"
-									>
+								<tr class="tr-${param.teamName }">
 									<th style="width: 25%">경기일</th>
 									<th style="width: 25%">경기</th>
 									<th style="width: 25%">경기장</th>

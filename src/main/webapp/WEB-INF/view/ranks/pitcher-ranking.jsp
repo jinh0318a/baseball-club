@@ -15,8 +15,8 @@
 		<div class="board-list">
 			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
 				<a href="${pageContext.servletContext.contextPath }/hitter-ranking"
-					class="no-deco-link" style="font-size: 20px">타자 순위</a> | <span
-					style="color: hotpink; font-size: 20px;">투수 순위</span>
+					class="no-deco-link"><button class="b-3">타자 순위</button></a>
+				<button class="b-5">투수 순위</button>
 			</div>
 			<div>
 				<table
