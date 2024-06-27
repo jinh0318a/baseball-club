@@ -19,7 +19,11 @@ public class BoardUpdateHandleController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			User authUser = (User) req.getSession().getAttribute("authUser");
-
+			if(authUser == null) {
+				resp.sendRedirect(req.getContextPath()+"/error");
+				return;
+			}
+			
 			BoardDao boardDao = new BoardDao();
 			int boardId = Integer.parseInt(req.getParameter("boardId"));
 			Board board = boardDao.findByBoardId(boardId);

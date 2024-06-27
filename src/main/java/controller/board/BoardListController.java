@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.BoardDao;
+import dao.CommentDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -30,9 +31,9 @@ public class BoardListController extends HttpServlet {
 
 			int count = boardDao.countAll();
 			int totalPages = count / size + (count % size > 0 ? 1 : 0);
-			
+
 			List<Board> announcement = new ArrayList<Board>();
-			
+
 			for (Board one : board) {
 				String type = one.getType();
 				if (type.equals("공지사항")) {
@@ -41,11 +42,13 @@ public class BoardListController extends HttpServlet {
 				}
 			}
 			List<Board> boardList = new ArrayList<Board>();
+
 			for (Board one : board) {
 				String type = one.getType();
 				if (type.equals("광장")) {
 					boardDao.searchBoardByType(type);
 					boardList.add(one);
+
 				}
 			}
 			req.setAttribute("announcement", announcement);
