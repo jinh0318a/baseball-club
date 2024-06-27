@@ -12,16 +12,6 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	<div style="padding: 8px; margin: auto; width: 1140px; margin:auto; width:540px;">
-		<form action="${pageContext.servletContext.contextPath }/login-handle"
-			method="post">
-			<input type="text" name="userId" placeholder="아이디"> <input
-				type="password" name="password" placeholder="비밀번호">
-			<button type="submit">로그인</button>
-		</form>
-		<a href="${pageContext.servletContext.contextPath }/join"
-			class="no-deco-link">회원가입 </a>
-	</div>
 	<section class="login">
 		<div class="login_box">
 			<div class="left">

@@ -15,7 +15,7 @@
 	<div style="padding: 8px; margin: auto; width: 1140px; margin:auto; width:540px;">
 		<div>
 			팔로어 목록 ${follower }명
-			<c:forEach var="i" items="${follwers }">
+			<c:forEach var="i" items="${followers }">
 				<a
 					href="${pageContext.servletContext.contextPath }/profile?userId=${i.followerId }"
 					class="no-deco-link">${i.followerId }</a>
