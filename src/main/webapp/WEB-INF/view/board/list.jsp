@@ -12,7 +12,7 @@
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<div style="padding: 8px; margin: auto; width: 1140px;">
-		
+
 		<div>
 			<table>
 				<tr>
@@ -29,8 +29,8 @@
 						<td style="color: red">${one.type }</td>
 						<td>${one.category }</td>
 						<td><a
-							href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }">
-								${one.title } </a></td>
+							href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
+							class="no-deco-link"> ${one.title } </a></td>
 						<td>${one.writerId }</td>
 						<td>${one.writedAt }</td>
 					</tr>

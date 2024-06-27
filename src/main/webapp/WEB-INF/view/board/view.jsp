@@ -12,52 +12,30 @@
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<div style="padding: 8px; margin: auto; width: 1140px;">
-		<div>
-			<h3>${board.title }</h3>
-			<div style="float: left; text-indent: 10px">
-				<span>작성자</span>
-				<c:if test="${empty board.writerId }">
-					<span>탈퇴한회원</span>
-				</c:if>
-				<span><a
-					href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }"
-					class="no-deco-link">${board.writerId }</a></span>
+		<div
+			style="padding: 60px 10px 30px 10px; border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+			<h2 style="text-align: center">
+				<c:out value="${board.title }" />
+			</h2>
+			<div style="display: flex; justify-content: space-between;">
+				<div style="text-indent: 10px">
+					<span>작성자</span>
+					<c:if test="${empty board.writerId }">
+						<span>탈퇴한회원</span>
+					</c:if>
+					<span><a
+						href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }"
+						class="no-deco-link">${board.writerId }</a></span>
+				</div>
+				<div style="text-indent: 10px">
+					<span>작성일</span> <span>${board.writedAt}<span> | <span>조회</span>
+							<span>${board.views }</span>
+				</div>
 			</div>
 			<div>
-				<span>작성일</span> <span>${board.writedAt}<span> | <span>조회</span>
-						<span>${board.views }</span>
+				<pre><c:out value="${board.body }" />
+				</pre>
 			</div>
-			<p
-				style="padding: 60px 10px 30px 10px; border-bottom: 1px solid #ccc;">
-				${board.body }</p>
-		</div>
-		<div>
-			<form action="${pageContext.servletContext.contextPath }/comment-new"
-				method="post">
-				<input type="hidden" name="boardId" value="${board.boardId }">
-				<textarea name="commentBody"
-					style="width: 100%; height: 6.25em; border-line:1px; ; resize: none;"></textarea>
-				<button type="submit" style="float:right" class="p-2 fs-4 border-rounded">작성</button>
-			</form>
-		</div>
-		<div>
-			<c:forEach var="i" items="${comments }">
-				<p>
-					작성자 ${i.writerId } 내용 ${i.body } 날짜 ${i.writedAt } 좋아요 ${i.like }
-					<c:if
-						test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
-						<a
-							href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }"
-							class="no-deco-link">추천</a>
-					</c:if>
-					<c:if test="${sessionScope.authUser.userId == i.writerId }">
-						<a
-							href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button
-								type="button">삭제</button></a>
-					</c:if>
-				</p>
-			</c:forEach>
-
 			<div>
 				<c:if test="${clubEvent && !duplicate}">
 					<span>현재 참여 인원 : ${participantNum }</span>
@@ -86,10 +64,47 @@
 						<button type="button">수정</button>
 					</a>
 				</c:if>
-				<a href="${pageContext.servletContext.contextPath }/board/list">
-					<button type="button" class="bt bt2">목록</button>
-				</a>
 			</div>
 		</div>
+
+		<c:if test="${board.type != '공지사항' }">
+			<div>
+				<form
+					action="${pageContext.servletContext.contextPath }/comment-new"
+					method="post">
+					<input type="hidden" name="boardId" value="${board.boardId }">
+					<textarea name="commentBody"
+						style="width: 100%; height: 6.25em; border-line: 1px;; resize: none;"></textarea>
+					<button type="submit" style="float: right"
+						class="p-2 fs-4 border-rounded">작성</button>
+				</form>
+			</div>
+			<div>
+				<c:forEach var="i" items="${comments }">
+					<p>
+						${i.writerId } |
+						<c:out value="${i.body }" />
+						| ${i.writedAt } | 추천수 ${i.like }
+						<c:if
+							test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
+							<a
+								href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }"
+								class="no-deco-link"> | 추천</a>
+						</c:if>
+						<c:if test="${sessionScope.authUser.userId == i.writerId }">
+							| <a
+								href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button
+									type="button">삭제</button></a>
+						</c:if>
+					</p>
+				</c:forEach>
+			</div>
+		</c:if>
+		<div>
+			<a href="${pageContext.servletContext.contextPath }/board/list">
+				<button type="button" class="bt bt2" style="float: right">목록</button>
+			</a>
+		</div>
+	</div>
 </body>
 </html>

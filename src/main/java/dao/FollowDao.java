@@ -197,4 +197,27 @@ public class FollowDao {
 		}
 
 	}
+	
+	
+	public boolean deleteUnfollow(String followerId, String followingId) throws SQLException {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("delete from follow where follower_id=? and following_id=?");
+			stmt.setString(1, followerId);
+			stmt.setString(2, followingId);
+			
+			int r = stmt.executeUpdate();
+
+			return r == 1 ? true : false;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+	
 }

@@ -10,7 +10,7 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
-	<%@ include file="/WEB-INF/view/common/header.jsp"%>
+
 	<div>
 		<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	</div>
