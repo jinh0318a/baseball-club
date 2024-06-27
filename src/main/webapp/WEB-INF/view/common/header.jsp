@@ -24,7 +24,7 @@
 			<div>
 				<form action="${pageContext.servletContext.contextPath}/search">
 					<input type="text" class="srch-bar" placeholder="검색어를 입력하세요"
-						size=60 style="padding: 8px; height: 20px; border-radius: 10px"
+						size=60 style="padding: 8px; height: 40px; border-radius: 10px"
 						name="word">
 				</form>
 			</div>

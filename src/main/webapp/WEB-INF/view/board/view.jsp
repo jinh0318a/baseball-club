@@ -35,8 +35,9 @@
 			<form action="${pageContext.servletContext.contextPath }/comment-new"
 				method="post">
 				<input type="hidden" name="boardId" value="${board.boardId }">
-				<textarea rows="" cols="" name="commentBody"></textarea>
-				<button type="submit">작성</button>
+				<textarea name="commentBody"
+					style="width: 100%; height: 6.25em; border-line:1px; ; resize: none;"></textarea>
+				<button type="submit" style="float:right" class="p-2 fs-4 border-rounded">작성</button>
 			</form>
 		</div>
 		<div>
