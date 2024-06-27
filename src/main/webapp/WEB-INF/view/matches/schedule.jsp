@@ -35,11 +35,13 @@
 					<c:when test="${size != 0 }">
 						<table
 							style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 0;">
-							<tr>
-								<th style="width: 25%">경기일</th>
-								<th style="width: 25%">경기</th>
-								<th style="width: 25%">경기장</th>
-							</tr>
+							<thead>
+								<tr>
+									<th style="width: 25%">경기일</th>
+									<th style="width: 25%">경기</th>
+									<th style="width: 25%">경기장</th>
+								</tr>
+							</thead>
 							<c:forEach var="i" items="${matches }" varStatus="status">
 								<c:set var="show"
 									value="${status.index == 0 || matches[status.index-1].matchDate != i.matchDate}" />
