@@ -12,23 +12,24 @@
 	<div>
 		<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	</div>
-	<div style="padding: 8px; margin: auto; width: 1140px;">
-		<div>
+	<div class="container">
+		<div class="board-list">
+			<p>구단게시판</p>
 			<table>
-				<tr>
-					<th>번호</th>
-					<th>게시판</th>
-					<th>말머리</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>작성일</th>
-				</tr>
+				<thead>
+					<tr>
+						<th>게시판</th>
+						<th>말머리</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
 				<c:forEach var="one" items="${announcement }">
 					<tr>
-						<td>${one.boardId }</td>
-						<td style="color: red">${one.type }</td>
-						<td>${one.category }</td>
-						<td><a
+						<td>📢</td>
+						<td class="warning">${one.category }</td>
+						<td class="dark"><a
 							href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }">
 								${one.title } </a></td>
 						<td>${one.writerId }</td>
@@ -37,7 +38,6 @@
 				</c:forEach>
 				<c:forEach var="one" items="${clubBoard }">
 					<tr>
-						<td>${one.boardId }</td>
 						<td>${one.type }</td>
 						<td>${one.category }</td>
 						<td><a
@@ -48,10 +48,13 @@
 					</tr>
 				</c:forEach>
 			</table>
-		</div>
-		<div>
-			<a href="${pageContext.servletContext.contextPath }/board/new"
-				class="no-deco-link"><button type="button">새글작성</button></a>
+			<div class="text-center">
+				<a>${totalPages }</a>
+			</div>
+			<div>
+				<a href="${pageContext.servletContext.contextPath }/board/new"
+					class="no-deco-link"><button type="button" class="b-1 ">새글작성</button></a>
+			</div>
 		</div>
 	</div>
 </body>
