@@ -48,18 +48,20 @@
 							<tr>
 
 								<td><c:if test="${show }">
+
 									${i.matchDate }
 								</c:if></td>
-								<td>${i.summary }</td>
-								<td>${i.location }</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</c:when>
-				<c:otherwise>
+									<td>${i.summary }</td>
+									<td>${i.location }</td>
+								</tr>
+							</c:forEach>
+						</table>
+					</c:when>
+					<c:otherwise>
 	경기 일정이 없습니다.
 	</c:otherwise>
-			</c:choose>
+				</c:choose>
+			</div>
 		</div>
 	</div>
 </body>
