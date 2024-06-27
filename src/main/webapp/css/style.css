@@ -3,6 +3,7 @@
 /*구글폰트*/
 @import
 	url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
 * {
 	font-family: "Orbit", sans-serif;
 	font-weight: 400;
@@ -149,7 +150,6 @@ a {
 .verical-align {
 	vertical-align: 50px;
 }
-
 
 /* 글씨 색상 클래스 */
 .warning {
@@ -686,7 +686,6 @@ a {
 	display: inline-block;
 }
 
-
 .board {
 	margin: auto;
 	width: 100%;
@@ -794,10 +793,12 @@ a {
 	top: 20%;
 	text-align: right;
 }
-.board-list p{
+
+.board-list p {
 	font-size: 2.2rem;
 	text-align: left;
 }
+
 .board-list table {
 	border-spacing: 1;
 	border-collapse: collapse;
@@ -831,56 +832,132 @@ a {
 .board-list table tr:hover {
 	background-color: #e8eff2;
 }
+/*일정 테이블*/
+.schedule-list {
+	width: 1000px;
+	margin: auto;
+	top: 20%;
+	text-align: right;
+}
 
+.schedule-list p {
+	font-size: 2.2rem;
+	text-align: left;
+}
 
+.schedule-list table {
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 6px;
+	overflow: hidden;
+	width: 100%;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.schedule-list thead tr {
+	height: 60px;
+	background: #bbd2e8;
+	font-size: 20px;
+	font-weight: Black;
+}
+
+.schedule-list td, th {
+	padding-left: 8px;
+	text-align: center;
+}
+
+.schedule-list tbody tr {
+	height: 48px;
+	border-top: 1px solid #d7e6fd;
+}
+
+.schedule-list table tr:hover {
+	background-color: #e8eff2;
+}
 /*팀 테이블 */
 .tr-두산 {
 	background-color: black !important;;
-	color: white; 
-	
+	color: #131230;
 }
+
 .tr-키움 {
 	background-color: black !important;;
-	color: white; 
-	
+	color: #bb1b39;;
 }
+
 .tr-롯데 {
 	background-color: black !important;;
-	color: white; 
-	
+	color: #041e42;
 }
+
 .tr-삼성 {
 	background-color: black !important;;
-	color: white; 
-	
+	color: white;
 }
+
 .tr-한화 {
 	background-color: black !important;;
-	color: white; 
-	
+	color: white;
 }
+
 .tr-KIA {
 	background-color: black !important;;
-	color: white; 
-	
+	color: white;
 }
+
 .tr-NC {
 	background-color: black !important;;
-	color: white; 
-	
+	color: white;
 }
+
 .tr-LG {
 	background-color: black !important;;
-	color: white; 
-	
+	color: white;
 }
-.tr-KT{
+
+.tr-KT {
 	background-color: black !important;;
-	color: white; 
-	
+	color: white;
 }
+
 .tr-SSG {
 	background-color: black !important;;
-	color: white; 
-	
+	color: white;
 }
+/*일정 클래스*/
+.schedule-area {
+	padding: 8px;
+	margin: auto;
+	width: 1140px;
+}
+
+.schedule {
+	margin: auto;
+	text-align: center;
+}
+
+.move-schedule {
+	margin: 20px auto ;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

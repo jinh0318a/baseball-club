@@ -12,8 +12,8 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	<div style="padding: 8px; margin: auto; width: 1140px;">
-		<div class="board-list">
+	<div class="schedule-area">
+		<div class="schedule-list">
 			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
 				<a href="${pageContext.servletContext.contextPath }/schedule"
 					class="no-deco-link">주간 일정</a> | <a
@@ -132,13 +132,13 @@
 					</c:otherwise>
 				</c:choose>
 			</div>
-			<div style="margin: auto; text-align: center;">
+			<div class="move-schedule">
 				<a
-					href="${pageContext.servletContext.contextPath }/schedule-team?teamName=${teamName }&month=${previous }"
-					class="no-deco-link">&lt;</a> <span style="color: blue;">${month }</span>월
+					href="${pageContext.servletContext.contextPath }/schedule-month?month=${previous }"
+					class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a> <span class="emphasize">${month }</span>월
 				일정 <a
-					href="${pageContext.servletContext.contextPath }/schedule-team?teamName=${teamName }&month=${next }"
-					class="no-deco-link">&gt;</a>
+					href="${pageContext.servletContext.contextPath }/schedule-month?month=${next }"
+					class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
 			</div>
 			<div>
 				<c:choose>

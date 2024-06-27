@@ -15,42 +15,48 @@
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<div class="container">
-		<div style="margin: auto; text-align: center; margin-bottom: 8px;">
-			<span style="color: hotpink;">주간 일정</span> | <a
-				href="${pageContext.servletContext.contextPath }/schedule-month"
-				class="no-deco-link">월별 일정</a> | <a
-				href="${pageContext.servletContext.contextPath }/schedule-team"
-				class="no-deco-link">팀별 일정</a>
+		<div class="schedule-list">
+			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
+				<span style="color: hotpink;">주간 일정</span> | <a
+					href="${pageContext.servletContext.contextPath }/schedule-month"
+					class="no-deco-link">월별 일정</a> | <a
+					href="${pageContext.servletContext.contextPath }/schedule-team"
+					class="no-deco-link">팀별 일정</a>
 
-		</div>
-		<div style="margin: auto; text-align: center;">
-			<a
-				href="${pageContext.servletContext.contextPath }/schedule?week=${lastWeek }"
-				class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a> <span
-				style="color: blue;">${thisWeek }</span> ~ <span
-				style="color: blue;">${endDate }</span> 일정 <a
-				href="${pageContext.servletContext.contextPath }/schedule?week=${nextWeek }"
-				class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
-		</div>
-		<div>
-			<c:choose>
-				<c:when test="${size != 0 }">
-					<table
-						style="margin-left: auto; margin-right: auto; text-align: center">
-						<tr>
-							<th style="width: 25%">경기일</th>
-							<th style="width: 25%">경기</th>
-							<th style="width: 25%">경기장</th>
-						</tr>
-						<c:forEach var="i" items="${matches }" varStatus="status">
-							<c:set var="show"
-								value="${status.index == 0 || matches[status.index-1].matchDate != i.matchDate}" />
-							<tr>
-
-								<td><c:if test="${show }">
-
-									${i.matchDate }
-								</c:if></td>
+			</div>
+			<div class="move-schedule">
+				<a
+					href="${pageContext.servletContext.contextPath }/schedule?week=${lastWeek }"
+					class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a>
+				<span class="emphasize">${thisWeek }</span> ~ <span
+					class="emphasize">${endDate }</span> <a
+					href="${pageContext.servletContext.contextPath }/schedule?week=${nextWeek }"
+					class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
+			</div>
+			<div>
+				<c:choose>
+					<c:when test="${size != 0 }">
+						<table
+							style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 0;">
+							<thead>
+								<tr>
+									<th style="width: 25%">경기일</th>
+									<th style="width: 25%">경기</th>
+									<th style="width: 25%">경기장</th>
+								</tr>
+							</thead>
+							<c:forEach var="i" items="${matches }" varStatus="status">
+								<c:set var="show"
+									value="${status.index == 0 || matches[status.index-1].matchDate != i.matchDate}" />
+								<tr style="${!show ? 'border:none':''}">
+									<c:choose>
+										<c:when test="${show }">
+											<td >${i.matchDate }</td>
+										</c:when>
+										<c:otherwise>
+											<td></td>
+										</c:otherwise>
+									</c:choose>
 									<td>${i.summary }</td>
 									<td>${i.location }</td>
 								</tr>
