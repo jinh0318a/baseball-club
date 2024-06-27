@@ -11,6 +11,7 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
+	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<section class="login">
 		<div class="login_box">
 			<div class="left">

@@ -30,7 +30,7 @@ public class FollowingController extends HttpServlet{
 			int following = followDao.countByFollowing(authUser.getUserId());
 			int follower = followDao.countByFollower(authUser.getUserId());
 			
-			req.setAttribute("follwers", follwers);
+			req.setAttribute("followers", follwers);
 			req.setAttribute("followings", followings);
 			req.setAttribute("following", following);
 			req.setAttribute("follower", follower);

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,47 +9,51 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
-<div>
+	<div>
 		<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	</div>
-	<div>
-		<a href="${pageContext.servletContext.contextPath }/board/new" class="no-deco-link">새글작성</a>
-	</div>
-	<div>
-		<table>
-			<tr>
-				<th>번호</th>
-				<th>게시판</th>
-				<th>말머리</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>작성일</th>
-			</tr>
-			<c:forEach var="one" items="${announcement }">
+	<div style="padding: 8px; margin: auto; width: 1140px;">
+		
+		<div>
+			<table>
 				<tr>
-					<td>${one.boardId }</td>
-					<td style="color: red">${one.type }</td>
-					<td>${one.category }</td>
-					<td><a
-						href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }">
-							${one.title } </a></td>
-					<td>${one.writerId }</td>
-					<td>${one.writedAt }</td>
+					<th>번호</th>
+					<th>게시판</th>
+					<th>말머리</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
 				</tr>
-			</c:forEach>
-			<c:forEach var="one" items="${eventBoard }">
-				<tr>
-					<td>${one.boardId }</td>
-					<td>${one.type }</td>
-					<td>${one.category }</td>
-					<td><a
-						href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }" class="no-deco-link">
-							${one.title } </a></td>
-					<td>${one.writerId }</td>
-					<td>${one.writedAt }</td>
-				</tr>
-			</c:forEach>
-		</table>
+				<c:forEach var="one" items="${announcement }">
+					<tr>
+						<td>${one.boardId }</td>
+						<td style="color: red">${one.type }</td>
+						<td>${one.category }</td>
+						<td><a
+							href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }">
+								${one.title } </a></td>
+						<td>${one.writerId }</td>
+						<td>${one.writedAt }</td>
+					</tr>
+				</c:forEach>
+				<c:forEach var="one" items="${eventBoard }">
+					<tr>
+						<td>${one.boardId }</td>
+						<td>${one.type }</td>
+						<td>${one.category }</td>
+						<td><a
+							href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
+							class="no-deco-link"> ${one.title } </a></td>
+						<td>${one.writerId }</td>
+						<td>${one.writedAt }</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+		<div>
+			<a href="${pageContext.servletContext.contextPath }/board/new"
+				class="no-deco-link"><button type="button">새글작성</button></a>
+		</div>
 	</div>
 </body>
 </html>

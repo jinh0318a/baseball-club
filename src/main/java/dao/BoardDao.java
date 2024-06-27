@@ -310,9 +310,9 @@ public class BoardDao {
 		try (Connection conn = ods.getConnection()) {
 			PreparedStatement stmt = conn
 					.prepareStatement("select * from boards where title like ? or category like ? or type like ?");
-			stmt.setString(1, word);
-			stmt.setString(2, word);
-			stmt.setString(3, word);
+			stmt.setString(1, "%"+word+"%");
+			stmt.setString(2, "%"+word+"%");
+			stmt.setString(3, "%"+word+"%");
 			ResultSet rs = stmt.executeQuery();
 			List<Board> board = new ArrayList<>();
 			while (rs.next()) {
@@ -334,5 +334,96 @@ public class BoardDao {
 			return null;
 		}
 	}
+	
+	
+	
+	
+	public List<Board> findEventByView() throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("select * from (SELECT * FROM BOARDS where type='이벤트' ORDER BY views DESC) where ROWNUM between 1 and 5");
 
+			ResultSet rs = stmt.executeQuery();
+			List<Board> board = new ArrayList<>();
+			while (rs.next()) {
+				Board one = new Board();
+				one.setBoardId(rs.getInt("board_id"));
+				one.setWriterId(rs.getString("writer_id"));
+				one.setTitle(rs.getString("title"));
+				one.setBody(rs.getString("body"));
+				one.setViews(rs.getInt("views"));
+				one.setWritedAt(rs.getDate("writed_at"));
+				one.setCategory(rs.getString("category"));
+				one.setType(rs.getString("type"));
+				board.add(one);
+			}
+			return board;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public List<Board> findClubByView() throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("select * from (SELECT * FROM BOARDS where type='구단' ORDER BY views DESC) where ROWNUM between 1 and 5");
+
+			ResultSet rs = stmt.executeQuery();
+			List<Board> board = new ArrayList<>();
+			while (rs.next()) {
+				Board one = new Board();
+				one.setBoardId(rs.getInt("board_id"));
+				one.setWriterId(rs.getString("writer_id"));
+				one.setTitle(rs.getString("title"));
+				one.setBody(rs.getString("body"));
+				one.setViews(rs.getInt("views"));
+				one.setWritedAt(rs.getDate("writed_at"));
+				one.setCategory(rs.getString("category"));
+				one.setType(rs.getString("type"));
+				board.add(one);
+			}
+			return board;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
+	public List<Board> findPlazaByView() throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("select * from (SELECT * FROM BOARDS where type='광장' ORDER BY views DESC) where ROWNUM between 1 and 5");
+
+			ResultSet rs = stmt.executeQuery();
+			List<Board> board = new ArrayList<>();
+			while (rs.next()) {
+				Board one = new Board();
+				one.setBoardId(rs.getInt("board_id"));
+				one.setWriterId(rs.getString("writer_id"));
+				one.setTitle(rs.getString("title"));
+				one.setBody(rs.getString("body"));
+				one.setViews(rs.getInt("views"));
+				one.setWritedAt(rs.getDate("writed_at"));
+				one.setCategory(rs.getString("category"));
+				one.setType(rs.getString("type"));
+				board.add(one);
+			}
+			return board;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 }

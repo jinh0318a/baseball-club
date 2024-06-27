@@ -48,6 +48,7 @@
 				<c:otherwise>
 					<a
 						href="${pageContext.servletContext.contextPath }/following-delete?userId=${foundUser.userId }"
+
 						class="no-deco-link"><button type="button"
 							class="b-1 float-right">언팔로우</button></a>
 				</c:otherwise>

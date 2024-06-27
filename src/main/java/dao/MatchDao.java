@@ -121,9 +121,10 @@ public class MatchDao {
 		ods.setPassword("oracle");
 		try (Connection conn = ods.getConnection()) {
 			PreparedStatement stmt = conn
-					.prepareStatement("select * from matches where summary like ?");
+					.prepareStatement("select * from matches where summary like ? or location like ?");
 			stmt.setString(1, "%"+word+"%");
-
+			stmt.setString(2, "%"+word+"%");
+			
 			ResultSet rs = stmt.executeQuery();
 			List<Match> matches = new ArrayList<Match>();
 			while (rs.next()) {
@@ -138,5 +139,27 @@ public class MatchDao {
 
 	}
 	
+	public List<Match> findByToday(Date today) throws SQLException {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn
+					.prepareStatement("select * from matches where match_date=?");
+			stmt.setDate(1, today);
 
+			ResultSet rs = stmt.executeQuery();
+			List<Match> matches = new ArrayList<Match>();
+			while (rs.next()) {
+				Match one = new Match(rs.getString(1), rs.getDate(2), rs.getString(3), rs.getString(4));
+				matches.add(one);
+			}
+			return matches;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+	}
 }

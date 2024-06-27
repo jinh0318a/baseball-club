@@ -11,6 +11,11 @@
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>
 <body>
+	<div style="padding: 8px; margin: auto; width: 1140px; margin:auto; width:540px;">
+		<form action="${pageContext.servletContext.contextPath }/join-handle"
+			method="post">
+			<div>
+				아이디 <input type="text" name="userId">
 	<section class="sign">
 		<div class="sign_box">
 			<div class="in">
