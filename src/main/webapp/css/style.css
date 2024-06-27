@@ -1,17 +1,15 @@
 @charset "UTF-8";
 
 /*구글폰트*/
+
 @import
 	url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
-
 * {
 	font-family: "Orbit", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
 
-@import
-	url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -61,24 +59,19 @@ a {
 	align-items: center;
 }
 
-.space-left {
+.justify-left {
 	justify-content: flex-start;
 }
 
-.space-right {
+.justify-right {
 	justify-content: flex-end;
 }
 
-.space-right2 {
-	justify-content: flex-end;
-	gap: 10px;
-}
-
-.space-between {
+.justify-between {
 	justify-content: space-between;
 }
 
-.space-center {
+.justify-center {
 	justify-content: center;
 }
 
@@ -146,10 +139,6 @@ a {
 	text-align: right;
 }
 
-.float-left {
-	float: left;
-}
-
 .float-right {
 	float: right;
 }
@@ -161,6 +150,7 @@ a {
 .verical-align {
 	vertical-align: 50px;
 }
+
 
 /* 글씨 색상 클래스 */
 .warning {
@@ -179,6 +169,10 @@ a {
 	color: #0080c0;
 }
 
+.kbo {
+	color: #0f4279;
+}
+
 .fs-1 {
 	font-size: 2rem;
 }
@@ -188,14 +182,18 @@ a {
 }
 
 .fs-3 {
-	font-size: 1.17rem;
+	font-size: 1.2rem;
 }
 
 .fs-4 {
-	font-size: 1.0rem;
+	font-size: 1.17rem;
 }
 
 .fs-5 {
+	font-size: 1.0rem;
+}
+
+.fs-6 {
 	font-size: 0.8rem;
 }
 
@@ -203,12 +201,16 @@ a {
 	font-size: 0.65rem;
 }
 /* 글씨 두께 */
-.fw-1 {
+.fw-l {
 	font-weight: lighter;
 }
 
-.fw-2 {
+.fw-b {
 	font-weight: bold;
+}
+/* 글씨 정렬 */
+.ta-i {
+	text-indent: -10px;
 }
 /* 기본 패딩 클래스 */
 .p-1 {
@@ -304,6 +306,31 @@ a {
 .my-5 {
 	margin: 20px auto;
 }
+
+.my-6 {
+	margin: 30px auto;
+}
+
+.me-1 {
+	margin-right: 4px;
+}
+
+.me-2 {
+	margin-right: 8px;
+}
+
+.me-3 {
+	margin-right: 12px;
+}
+
+.me-4 {
+	margin-right: 16px;
+}
+
+.me-5 {
+	margin-right: 20px;
+}
+
 /* 링크 클래스*/
 .no-deco-link {
 	color: #444;
@@ -311,28 +338,66 @@ a {
 }
 /* 버튼 클래스 */
 .button {
-	background-color: #d9e3fb;
+	text-align: center;
+	border: 1px solid #b3ddf7;
+	border-radius: 10px;
+	background-color: #bbd2e8;
+	color: #444;
+	font-weight: bold;
+	padding: 10px 30px;
+	margin: 10px;
 	cursor: pointer;
+	font-size: 1.5rem;
+	width: 200px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center
 }
 
 .button2:hover {
-	background-color: #aed2f7;
+	background-color: #0f4279;
 	color: white;
 }
 
-.align-right-b {
-	border: 1px solid #fefdc2;
+.b-1 {
+	text-align: center;
+	border: 1px solid #b3ddf7;
 	border-radius: 10px;
-	background-color: #fde46f;
-	color: fw-2;
-	padding: 5px;
-	margin: 10px;
+	background-color: #bbd2e8;
+	color: #444;
+	font-weight: bold;
+	padding: 10px 20px;
 	cursor: pointer;
-	float: right;
+	font-size: 1rem;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center
 }
 
-.b2:hover {
-	background-color: #f8bc1f;
+.b-1:hover {
+	background-color: #0f4279;
+	color: white;
+}
+
+.b-2 {
+	text-align: center;
+	border: 1px solid #ff8080;
+	border-radius: 10px;
+	background-color: #ff8080;
+	color: #444;
+	font-weight:bold;
+	padding: 10px 10px;
+	margin: 10px;
+	cursor: pointer;
+	font-size: 1rem;
+	text-align: center;
+	
+}
+
+.b-2:hover {
+	background-color: #f23728;
 	color: white;
 }
 /* 박스 클래스 */
@@ -475,22 +540,22 @@ a {
 	overflow: hidden;
 }
 
-.sign_box .left {
+.sign_box .in {
 	width: 100%;
 	height: 100%;
 	padding: 25px 25px;
 }
 
-.left .top_link a {
+.in .top_link a {
 	color: #452A5A;
 	font-weight: 400;
 }
 
-.left .top_link {
+.in .top_link {
 	height: 20px
 }
 
-.left .contacts {
+.in .contacts {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -500,26 +565,45 @@ a {
 	margin: 50px auto;
 }
 
-.left h3 {
+.in h3 {
 	text-align: center;
 	margin-bottom: 40px;
+	font-weight: bold;
 }
 
-.left input {
+.in input {
 	border: none;
-	width: 80%;
+	width: 90%;
 	margin: 15px 0px;
 	border-bottom: 1px solid #4f30677d;
 	padding: 7px 9px;
-	width: 100%;
 	overflow: hidden;
 	background: transparent;
 	font-weight: 600;
 	font-size: 14px;
 }
 
-.left {
+.in [type=radio] {
+	border: none;
+	margin: 15px 0px;
+	border-bottom: 1px solid #4f30677d;
+	padding: 7px 9px;
+	overflow: hidden;
+	background: transparent;
+	font-weight: 600;
+	font-size: 14px;
+	width: auto;
+}
+
+.in {
 	background: linear-gradient(-45deg, #dcd7e0, #fff);
+}
+
+.in input::placeholder {
+	color: #444;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-indent: -10px;
 }
 
 .submit {
@@ -536,6 +620,75 @@ a {
 	-moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
 	box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
 }
+/*마이페이지 클래스*/
+.mypage {
+	width: 300px;
+	height: 500px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	padding: 10px;
+	transform: translate(-50%, -30%);
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	transform: translate(-50%, -30%);
+}
+
+.mypage button {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.mypage h2 {
+	text-align: center;
+	font-size: 2.0rem;
+	font-weight: bold;
+}
+
+.mypage .inbox {
+	position: absolute;
+	top: 50%;
+	left: 17%;
+	transform: translateY(-50%);
+}
+/*팔로우 클래스*/
+.follow {
+	width: 500px;
+	height: 250px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	padding: 50px 30px;
+	transform: translate(-50%, -30%);
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	overflow: hidden;
+}
+
+.follower {
+	width: 500px;
+	height: 800px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	padding: 50px 30px;
+	transform: translate(-50%, -30%);
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	overflow: hidden;
+}
+
+.follower li::marker {
+	content: '💙';
+	display: inline-block;
+}
+
 
 .board {
 	margin: auto;
@@ -585,3 +738,55 @@ a {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
+/*프로필 클래스*/
+.profile {
+	width: 550px;
+	height: 350px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	padding: 30px 30px;
+	transform: translate(-50%, -30%);
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	overflow: hidden;
+}
+
+.profile h2 {
+	padding: 0;
+	margin: 5px;
+}
+
+.profile p {
+	padding: 0;
+	margin: 10px;
+}
+
+/*회원탈퇴 클래스*/
+.withdraw {
+	width: 500px;
+	height: 200px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	padding: 20px 20px;
+	transform: translate(-50%, -30%);
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	overflow: hidden;
+	text-align: center;
+}
+
+.withdraw input {
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 10px;
+}
+.withdraw p {
+	padding: 0;
+	margin: 10px;
+}
+
