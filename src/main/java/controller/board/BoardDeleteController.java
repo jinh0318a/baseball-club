@@ -18,6 +18,11 @@ public class BoardDeleteController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			User authUser = (User) req.getSession().getAttribute("authUser");
+			if(authUser == null) {
+				resp.sendRedirect(req.getContextPath()+"/error");
+				return;
+			}
+			
 			
 			BoardDao boardDao = new BoardDao();
 			int boardId = Integer.parseInt(req.getParameter("boardId")); 
@@ -29,6 +34,7 @@ public class BoardDeleteController extends HttpServlet {
 			if(found == null || found.getWriterId() == null || !found.getWriterId().equals(authUser.getUserId())) {
 				result = false;
 				resp.sendRedirect(req.getContextPath()+"/error");
+				return;
 			}else {
 				result = boardDao.deleteWriteView(boardId);
 				resp.sendRedirect(req.getContextPath()+"/board/list");

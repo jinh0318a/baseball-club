@@ -10,12 +10,19 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vo.Comment;
+import vo.User;
 
 @WebServlet("/comment-like")
 public class LikeCommentController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
+			User authUser = (User) req.getSession().getAttribute("authUser");
+			if (authUser == null) {
+				resp.sendRedirect(req.getContextPath() + "/error");
+				return;
+			}
+
 			CommentDao commentDao = new CommentDao();
 			int commentId = Integer.parseInt(req.getParameter("commentId"));
 			Comment comment = commentDao.findById(commentId);

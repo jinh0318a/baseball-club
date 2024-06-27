@@ -12,42 +12,42 @@
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<div style="padding: 8px; margin: auto; width: 1140px;">
-		<div>
-			<span>새 글 작성</span>
-			<form
-				action="${pageContext.servletContext.contextPath }/board/new-handle"
-				method="post">
-				<div>
+		<div class="board">
+			<div class="board_box">
+				<span>새 글 작성</span>
+				<form
+					action="${pageContext.servletContext.contextPath }/board/new-handle"
+					method="post" style="margin-top: 20px;">
 					<div>
-						<select name="type" id="boardType">
-							<option selected disabled>게시판을 선택해주세요</option>
-							<option value="광장">광장</option>
-							<option value="구단">구단</option>
-							<option value="이벤트">이벤트</option>
-							<option value="거래">거래</option>
-							<c:if test="${authUser.userId.equals('manager') }">
-								<option value="공지사항">공지사항</option>
-							</c:if>
-						</select>
+						<div>
+							<select name="type" id="boardType">
+								<option selected disabled>게시판을 선택해주세요</option>
+								<option value="광장">광장</option>
+								<option value="구단">구단</option>
+								<option value="이벤트">이벤트</option>
+								<c:if test="${authUser.userId.equals('manager') }">
+									<option value="공지사항">공지사항</option>
+								</c:if>
+							</select>
+						</div>
+						<div>
+							<select name="category" id="boardCategory">
+								<option selected disabled>카테고리를 선택해주세요</option>
+							</select>
+						</div>
+						<div>
+							<input type="text" name="title" placeholder="제목을 입력하세요">
+						</div>
 					</div>
 					<div>
-						<select name="category" id="boardCategory">
-							<option selected disabled>카테고리를 선택해주세요</option>
-						</select>
+						<textarea name="body" placeholder="내용을 입력하세요"></textarea>
 					</div>
 					<div>
-						<input type="text" name="title" placeholder="제목을 입력하세요">
+						<button type="submit">등록</button>
 					</div>
-				</div>
-				<div>
-					<span>내용</span>
-					<textarea name="body" placeholder="내용을 입력하세요"></textarea>
-				</div>
-				<div>
-					<button type="submit">등록</button>
-				</div>
-			</form>
+				</form>
 
+			</div>
 		</div>
 
 		<script>
@@ -64,9 +64,7 @@
 							options = [ "기아", "두산", "롯데", "삼성", "SSG", "엔씨",
 									"LG", "KT", "키움", "한화" ];
 							break;
-						case "거래":
-							options = [ "삽니다", "팝니다", "나눔" ];
-							break;
+
 						case "이벤트":
 							options = [ "공식", "자체", "후기" ];
 							break;

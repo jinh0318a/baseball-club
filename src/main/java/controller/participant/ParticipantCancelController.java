@@ -20,6 +20,10 @@ public class ParticipantCancelController extends HttpServlet {
 
 		try {
 			User authUser = (User)req.getSession().getAttribute("authUser");
+			if(authUser == null) {
+				resp.sendRedirect(req.getContextPath()+"/error");
+				return;
+			}
 			String userId = authUser.getUserId();
 			int eventId = Integer.parseInt(req.getParameter("boardId"));
 			
