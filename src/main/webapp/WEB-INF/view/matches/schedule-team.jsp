@@ -145,11 +145,14 @@
 					<c:when test="${size != 0 }">
 						<table
 							style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 0;">
-							<tr>
-								<th style="width: 25%">경기일</th>
-								<th style="width: 25%">경기</th>
-								<th style="width: 25%">경기장</th>
-							</tr>
+							<thead>
+								<tr class="tr-${param.teamName }"
+									>
+									<th style="width: 25%">경기일</th>
+									<th style="width: 25%">경기</th>
+									<th style="width: 25%">경기장</th>
+								</tr>
+							</thead>
 							<c:forEach var="i" items="${matches }">
 								<tr>
 									<td>${i.matchDate }</td>
