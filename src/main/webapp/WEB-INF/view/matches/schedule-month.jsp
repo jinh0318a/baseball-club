@@ -15,11 +15,10 @@
 		<div class="schedule-list">
 			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
 				<a href="${pageContext.servletContext.contextPath }/schedule"
-					class="no-deco-link">주간 일정</a> | <span style="color: hotpink">월별
-					일정</span> | <a
-					href="${pageContext.servletContext.contextPath }/schedule-team"
-					class="no-deco-link">팀별 일정</a>
-
+					class="no-deco-link"><button class="b-3">주간 일정</button></a>
+				<button class="b-4">월별 일정</button>
+				<a href="${pageContext.servletContext.contextPath }/schedule-team"
+					class="no-deco-link"><button class="b-3">팀별 일정</button></a>
 			</div>
 			<div class="move-schedule">
 				<a

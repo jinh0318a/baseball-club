@@ -16,20 +16,20 @@
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<div class="container">
 		<div class="schedule-list">
-			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
-				<span style="color: hotpink;">주간 일정</span> | <a
-					href="${pageContext.servletContext.contextPath }/schedule-month"
-					class="no-deco-link">월별 일정</a> | <a
+			<div class="schedule-button ">
+				<button class="b-4">주간 일정</button>
+				<a href="${pageContext.servletContext.contextPath }/schedule-month"
+					class="no-deco-link"><button class="b-3">월별 일정</button></a> <a
 					href="${pageContext.servletContext.contextPath }/schedule-team"
-					class="no-deco-link">팀별 일정</a>
+					class="no-deco-link"><button class="b-3">팀별 일정</button></a>
 
 			</div>
 			<div class="move-schedule">
 				<a
 					href="${pageContext.servletContext.contextPath }/schedule?week=${lastWeek }"
 					class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a>
-				<span class="emphasize">${thisWeek }</span> ~ <span
-					class="emphasize">${endDate }</span> <a
+				<span class="dark">${thisWeek }</span> ~ <span
+					class="dark">${endDate }</span> <a
 					href="${pageContext.servletContext.contextPath }/schedule?week=${nextWeek }"
 					class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
 			</div>
@@ -51,7 +51,7 @@
 								<tr style="${!show ? 'border:none':''}">
 									<c:choose>
 										<c:when test="${show }">
-											<td >${i.matchDate }</td>
+											<td>${i.matchDate }</td>
 										</c:when>
 										<c:otherwise>
 											<td></td>

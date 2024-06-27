@@ -215,6 +215,7 @@ a {
 .ta-i {
 	text-indent: -10px;
 }
+
 /* 기본 패딩 클래스 */
 .p-1 {
 	padding: 4px;
@@ -396,6 +397,49 @@ a {
 .b-2:hover {
 	background-color: #f23728;
 	color: white;
+}
+
+.b-3 {
+	text-align: center;
+	border: 1px solid #ebebeb;
+	border-radius: 30px;
+	background-color: #ffffff;
+	color: #727272;
+	padding: 5px 15px;
+	margin: 5px;
+	cursor: pointer;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.b-3:hover {
+	border: 1px solid #afafaf;
+	background-color: #e9eded;
+	transition: linear.3s;
+}
+
+.b-4 {
+	text-align: center;
+	border: 1px solid #ffffff;
+	border-radius: 30px;
+	background-color: #6fb7ff;
+	color: #ffffff;
+	padding: 5px 15px;
+	margin: 5px;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.b-5 {
+	text-align: center;
+	border: 1px solid #ffffff;
+	border-radius: 30px;
+	background-color: #92c6fa;
+	color: #ffffff;
+	padding: 5px 15px;
+	margin: 5px;
+	font-size: 1.2rem;
+	text-align: center;
 }
 /* 박스 클래스 */
 .box-s1 {
@@ -837,7 +881,6 @@ a {
 	width: 1000px;
 	margin: auto;
 	top: 20%;
-	text-align: right;
 }
 
 .schedule-list p {
@@ -878,44 +921,89 @@ a {
 .schedule-list table tr:hover {
 	background-color: #e8eff2;
 }
+/*팀별 일정 테이블*/
+.schedule-team-list {
+	width: 1000px;
+	margin: auto;
+	top: 20%;
+}
+
+.schedule-team-list p {
+	font-size: 2.2rem;
+	text-align: left;
+}
+
+.schedule-team-list table {
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 6px;
+	overflow: hidden;
+	width: 100%;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.schedule-team-list thead tr {
+	height: 60px;
+	background: #a50034;
+	font-size: 20px;
+	font-weight: white;
+}
+
+.schedule-team-list td, th {
+	padding-left: 8px;
+	text-align: center;
+}
+
+.schedule-team-list tbody tr {
+	height: 48px;
+	border-top: 1px solid #d7e6fd;
+}
+
+.schedule-team-list table tr:hover {
+	background-color: #e8eff2;
+}
 /*팀 테이블 */
 .tr-두산 {
-	background-color: black !important;;
-	color: #131230;
+	background-color: #131230 !important;;
+	color: white;
 }
 
 .tr-키움 {
-	background-color: black !important;;
-	color: #bb1b39;;
+	background-color: #972546 !important;;
+	color: white;;
 }
 
 .tr-롯데 {
-	background-color: black !important;;
-	color: #041e42;
+	background-color: #041e42 !important;;
+	color: white;
 }
 
 .tr-삼성 {
-	background-color: black !important;;
+	background-color: #074ca1 !important;;
 	color: white;
 }
 
 .tr-한화 {
-	background-color: black !important;;
+	background-color: #FF6600 !important;;
 	color: white;
 }
 
 .tr-KIA {
-	background-color: black !important;;
+	background-color: #ea0029 !important;;
 	color: white;
 }
 
 .tr-NC {
-	background-color: black !important;;
+	background-color: #5c8ebb !important;;
 	color: white;
 }
 
 .tr-LG {
-	background-color: black !important;;
+	background-color: #a50034 !important;;
 	color: white;
 }
 
@@ -925,7 +1013,7 @@ a {
 }
 
 .tr-SSG {
-	background-color: black !important;;
+	background-color: #ce0e2d !important;;
 	color: white;
 }
 /*일정 클래스*/
@@ -935,17 +1023,88 @@ a {
 	width: 1140px;
 }
 
-.schedule {
+.schedule-button {
 	margin: auto;
 	text-align: center;
+	margin-bottom: 8px;
 }
 
 .move-schedule {
-	margin: 20px auto ;
+	margin: 20px auto;
 	text-align: center;
 	font-size: 1.5rem;
 }
+/*메인 홈페이지 클래스*/
+.index-area {
+	padding: 8px;
+	margin: auto;
+	width: 1140px;
+}
 
+.index-area .club-link {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	width: 90%;
+	margin: auto;
+}
+
+.club-link img {
+	width: 150px;
+	height: 100px;
+}
+
+.index-area .today-game {
+	margin-bottom: 50px;
+	margin-top: 30px;
+}
+
+.today-game h2 {
+	text-align: center;
+	color: #0f4279;
+}
+
+.today-game table {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 0;
+	border-spacing: 1;
+	border-collapse: collapse;
+	border-bottom: 1px solid #d7dbe1;
+}
+.today-game thead tr {
+	height: 50px;
+	background: #b1ccfb;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.today-game td, th {
+	text-align: center;
+	padding: 5px 8px;
+}
+
+.today-game tbody tr {
+	height: 30px;
+	border-top: 1px solid #d7e6fd;
+}
+.index-board{
+	display: flex; 
+	justify-content: space-between;
+}
+.index-board .popular-board{
+	border: 1px solid #d7dbe1;
+	border-radius: 20px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.popular-board h3{
+	border-bottom: 1px solid #d7dbe1;
+	padding: 10px;
+}
 
 
 

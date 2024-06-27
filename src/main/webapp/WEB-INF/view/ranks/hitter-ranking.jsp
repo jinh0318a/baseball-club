@@ -14,9 +14,9 @@
 	<div style="padding: 8px; margin: auto; width: 1140px;">
 		<div class="board-list">
 			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
-				<span style="color: hotpink; font-size: 20px;">타자 순위</span> | <a
-					href="${pageContext.servletContext.contextPath }/pitcher-ranking"
-					class="no-deco-link" style="font-size: 20px">투수 순위</a>
+				<button class="b-5">타자 순위</button>
+				<a href="${pageContext.servletContext.contextPath }/pitcher-ranking"
+					class="no-deco-link"><button class="b-3">투수 순위</button></a>
 			</div>
 			<div>
 				<table
