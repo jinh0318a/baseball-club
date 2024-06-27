@@ -11,8 +11,8 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	<div style="padding: 8px; margin: auto; width: 1140px;">
-		<div class="board-list">
+	<div class="schedule-area">
+		<div class="schedule-list">
 			<div style="margin: auto; text-align: center; margin-bottom: 8px;">
 				<a href="${pageContext.servletContext.contextPath }/schedule"
 					class="no-deco-link">주간 일정</a> | <span style="color: hotpink">월별
@@ -21,32 +21,37 @@
 					class="no-deco-link">팀별 일정</a>
 
 			</div>
-			<div style="margin: auto; text-align: center;">
+			<div class="move-schedule">
 				<a
 					href="${pageContext.servletContext.contextPath }/schedule-month?month=${previous }"
-					class="no-deco-link">&lt;</a> <span style="color: blue;">${month }</span>월
-				일정 <a
+					class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a>
+				<span class="emphasize">${month }</span>월 일정 <a
 					href="${pageContext.servletContext.contextPath }/schedule-month?month=${next }"
-					class="no-deco-link">&gt;</a>
+					class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
 			</div>
 			<c:choose>
 				<c:when test="${size != 0 }">
 					<table
 						style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 0;">
 						<thead>
-						<tr>
-							<th style="width: 25%">경기일</th>
-							<th style="width: 25%">경기</th>
-							<th style="width: 25%">경기장</th>
-						</tr>
+							<tr>
+								<th style="width: 25%">경기일</th>
+								<th style="width: 25%">경기</th>
+								<th style="width: 25%">경기장</th>
+							</tr>
 						</thead>
 						<c:forEach var="i" items="${matches }" varStatus="status">
 							<c:set var="show"
 								value="${status.index == 0 || matches[status.index-1].matchDate != i.matchDate}" />
-							<tr>
-								<td><c:if test="${show }">
-									${i.matchDate }
-								</c:if></td>
+							<tr style="${!show ? 'border:none':''}">
+								<c:choose>
+									<c:when test="${show }">
+										<td>${i.matchDate }</td>
+									</c:when>
+									<c:otherwise>
+										<td></td>
+									</c:otherwise>
+								</c:choose>
 								<td>${i.summary }</td>
 								<td>${i.location }</td>
 							</tr>
