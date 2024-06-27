@@ -21,7 +21,7 @@ public class LoginHandleController extends HttpServlet{
 			String userId = request.getParameter("userId");
 			String password = request.getParameter("password");
 			User user = userDao.findById(userId);
-			if(userId==null || userId.isBlank() || password==null || password.isBlank()) {
+			if(userId==null || userId.isBlank() || password==null || password.isBlank() || user==null) {
 				response.sendRedirect(request.getContextPath() + "/error");
 				return;
 			}

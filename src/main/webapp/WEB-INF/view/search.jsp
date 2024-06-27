@@ -11,6 +11,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/view/common/header.jsp" %>
+<div style="padding: 8px; margin: auto; width: 1140px;" >
 	<div>${word }검색결과</div>
 	<div>
 		경기 일정
@@ -42,6 +43,6 @@
 		</c:otherwise>
 		</c:choose>
 	</div>
-
+</div>
 </body>
 </html>
