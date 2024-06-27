@@ -53,6 +53,7 @@ public class BoardListController extends HttpServlet {
 			}
 			req.setAttribute("announcement", announcement);
 			req.setAttribute("boardList", boardList);
+			req.setAttribute("totalPages", totalPages);
 
 			req.getRequestDispatcher("/WEB-INF/view/board/list.jsp").forward(req, resp);
 		} catch (Exception e) {

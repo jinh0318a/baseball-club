@@ -43,14 +43,14 @@
 					<a
 						href="${pageContext.servletContext.contextPath }/following-handle?userId=${foundUser.userId }"
 						class="no-deco-link"><button type="button"
-							class="b-1 justify-right">팔로우</button></a>
+							class="b-1">팔로우</button></a>
 				</c:when>
 				<c:otherwise>
 					<a
 						href="${pageContext.servletContext.contextPath }/following-delete?userId=${foundUser.userId }"
 
 						class="no-deco-link"><button type="button"
-							class="b-1 float-right">언팔로우</button></a>
+							class="b-1">언팔로우</button></a>
 				</c:otherwise>
 			</c:choose>
 		</div>

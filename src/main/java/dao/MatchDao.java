@@ -5,13 +5,11 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import oracle.jdbc.datasource.impl.OracleDataSource;
 import vo.Match;
-import vo.User;
 
 public class MatchDao {
 

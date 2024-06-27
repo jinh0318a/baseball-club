@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /*구글폰트*/
-
 @import
 	url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
 * {
@@ -9,7 +8,6 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
 
 * {
 	box-sizing: border-box;
@@ -26,6 +24,7 @@ a {
 .container {
 	width: 1140px;
 	margin: auto;
+	padding: 8px;
 }
 
 .wrap-md {
@@ -171,6 +170,10 @@ a {
 
 .kbo {
 	color: #0f4279;
+}
+
+.dark {
+	color: #000000;
 }
 
 .fs-1 {
@@ -361,7 +364,6 @@ a {
 }
 
 .b-1 {
-	text-align: center;
 	border: 1px solid #b3ddf7;
 	border-radius: 10px;
 	background-color: #bbd2e8;
@@ -370,10 +372,6 @@ a {
 	padding: 10px 20px;
 	cursor: pointer;
 	font-size: 1rem;
-	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center
 }
 
 .b-1:hover {
@@ -387,13 +385,12 @@ a {
 	border-radius: 10px;
 	background-color: #ff8080;
 	color: #444;
-	font-weight:bold;
+	font-weight: bold;
 	padding: 10px 10px;
 	margin: 10px;
 	cursor: pointer;
 	font-size: 1rem;
 	text-align: center;
-	
 }
 
 .b-2:hover {
@@ -785,8 +782,53 @@ a {
 	border-radius: 10px;
 	padding: 10px;
 }
+
 .withdraw p {
 	padding: 0;
 	margin: 10px;
+}
+/*게시판 클래스*/
+.board-list {
+	width: 1000px;
+	margin: auto;
+	top: 20%;
+	text-align: right;
+}
+.board-list p{
+	font-size: 2.2rem;
+	text-align: left;
+}
+.board-list table {
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 6px;
+	overflow: hidden;
+	width: 100%;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.board-list thead tr {
+	height: 60px;
+	background: #bbd2e8;
+	font-size: 20px;
+	font-weight: Black;
+}
+
+.board-list td, th {
+	padding-left: 8px;
+	text-align: center;
+}
+
+.board-list tbody tr {
+	height: 48px;
+	border-bottom: 1px solid #d7e6fd;
+}
+
+.board-list table tr:hover {
+	background-color: #e8eff2;
 }
 
