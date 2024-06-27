@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +17,9 @@
 			<div class="in">
 				<div class="top_link">
 					<a href="${pageContext.servletContext.contextPath }/index"> <i
-						class="fa-solid fa-baseball-bat-ball fa-1x no-deco-link"></i> 
-					</a>
-					<a href="${pageContext.servletContext.contextPath }/mypage"> 
-						<i class="fa-solid fa-user no-deco-link mx-2"></i>
+						class="fa-solid fa-baseball-bat-ball fa-1x no-deco-link"></i>
+					</a> <a href="${pageContext.servletContext.contextPath }/mypage"> <i
+						class="fa-solid fa-user no-deco-link mx-2"></i>
 					</a>
 				</div>
 				<div class="contacts">
@@ -54,22 +54,35 @@
 						<div>
 							선호구단
 							<div class="d-flex align-center g-05">
-								<input type="radio" name="club" value="LG트윈스" id="lg-radio"><label
+								<input type="radio" name="club" value="LG트윈스" id="lg-radio"
+									<c:if test="${sessionScope.authUser.club == 'LG트윈스' }">checked="checked"</c:if>><label
 									for="lg-radio">LG</label> <input type="radio" name="club"
-									value="KT위즈" id="kt-radio"><label for="kt-radio">KT</label>
-								<input type="radio" name="club" value="SSG랜더스" id="ssg-radio"><label
+									value="KT위즈" id="kt-radio"
+									<c:if test="${sessionScope.authUser.club == 'KT위즈' }">checked="checked"</c:if>><label
+									for="kt-radio">KT</label> <input type="radio" name="club"
+									value="SSG랜더스" id="ssg-radio"
+									<c:if test="${sessionScope.authUser.club == 'SSG랜더스' }">checked="checked"</c:if>><label
 									for="ssg-radio">SSG</label> <input type="radio" name="club"
-									value="NC다이노스" id="nc-radio"><label for="nc-radio">NC</label>
-								<input type="radio" name="club" value="두산베어스" id="dosan-radio"><label
+									value="NC다이노스" id="nc-radio"
+									<c:if test="${sessionScope.authUser.club == 'NC다이노스' }">checked="checked"</c:if>><label
+									for="nc-radio">NC</label> <input type="radio" name="club"
+									value="두산베어스" id="dosan-radio"
+									<c:if test="${sessionScope.authUser.club == '두산베어스' }">checked="checked"</c:if>><label
 									for="dosan-radio">두산</label> <input type="radio" name="club"
-									value="KIA타이거즈" id="kia-radio"><label for="kia-radio">KIA</label>
-								<input type="radio" name="club" value="롯데자이언츠" id="lotte-radio"><label
+									value="KIA타이거즈" id="kia-radio"
+									<c:if test="${sessionScope.authUser.club == 'KIA타이거즈' }">checked="checked"</c:if>><label
+									for="kia-radio">KIA</label> <input type="radio" name="club"
+									value="롯데자이언츠" id="lotte-radio"
+									<c:if test="${sessionScope.authUser.club == '롯데자이언츠' }">checked="checked"</c:if>><label
 									for="lotte-radio">롯데</label> <input type="radio" name="club"
-									value="삼성라이온즈" id="samsung-radio"><label
+									value="삼성라이온즈" id="samsung-radio"
+									<c:if test="${sessionScope.authUser.club == '삼성라이온즈' }">checked="checked"</c:if>><label
 									for="samsung-radio">삼성</label> <input type="radio" name="club"
-									value="한화이글스" id="hanhwa-radio"><label
+									value="한화이글스" id="hanhwa-radio"
+									<c:if test="${sessionScope.authUser.club == '한화이글스' }">checked="checked"</c:if>><label
 									for="hanhwa-radio">한화</label> <input type="radio" name="club"
-									value="키움히어로즈" id="kiwoom-radio"><label
+									value="키움히어로즈" id="kiwoom-radio"
+									<c:if test="${sessionScope.authUser.club == '키움히어로즈' }">checked="checked"</c:if>><label
 									for="kiwoom-radio">키움</label>
 							</div>
 						</div>
