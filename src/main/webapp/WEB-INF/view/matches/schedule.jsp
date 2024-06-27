@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://kit.fontawesome.com/053f0cac61.js"
+	crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>주간 일정</title>
 <link rel="stylesheet"
@@ -12,7 +14,7 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	<div style="padding: 8px; margin: auto; width: 1140px;">
+	<div class="container">
 		<div style="margin: auto; text-align: center; margin-bottom: 8px;">
 			<span style="color: hotpink;">주간 일정</span> | <a
 				href="${pageContext.servletContext.contextPath }/schedule-month"
@@ -24,10 +26,11 @@
 		<div style="margin: auto; text-align: center;">
 			<a
 				href="${pageContext.servletContext.contextPath }/schedule?week=${lastWeek }"
-				class="no-deco-link">&lt;</a> <span style="color: blue;">${thisWeek }</span>
-			~ <span style="color: blue;">${endDate }</span> 일정 <a
+				class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a> <span
+				style="color: blue;">${thisWeek }</span> ~ <span
+				style="color: blue;">${endDate }</span> 일정 <a
 				href="${pageContext.servletContext.contextPath }/schedule?week=${nextWeek }"
-				class="no-deco-link">&gt;</a>
+				class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
 		</div>
 		<div>
 			<c:choose>

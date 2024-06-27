@@ -15,17 +15,17 @@
 		<div class="board-list">
 			<p>자유게시판</p>
 			<table>
-			<thead>
-				<tr>
-					<th>게시판</th>
-					<th>말머리</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>작성일</th>
-				</tr>
-			</thead>
+				<thead>
+					<tr>
+						<th>게시판</th>
+						<th>말머리</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
 				<c:forEach var="one" items="${announcement }">
-					
+
 					<tr>
 						<td>📢</td>
 						<td class="warning">${one.category }</td>
@@ -36,7 +36,6 @@
 						<td>${one.writedAt }</td>
 					</tr>
 				</c:forEach>
-				
 				<c:forEach var="one" items="${boardList }">
 					<tr>
 						<td>${one.type }</td>
@@ -54,7 +53,7 @@
 			</div>
 			<div>
 				<a href="${pageContext.servletContext.contextPath }/board/new"
-					class="no-deco-link"><button type="button" class="b-1">새글작성</button></a>
+					class="no-deco-link"><button type="button" class="b-1 ">새글작성</button></a>
 			</div>
 		</div>
 	</div>

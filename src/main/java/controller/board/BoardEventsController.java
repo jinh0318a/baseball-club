@@ -50,6 +50,7 @@ public class BoardEventsController extends HttpServlet {
 
 			req.setAttribute("eventBoard", eventBoard);
 			req.setAttribute("announcement", announcement);
+			req.setAttribute("totalPages", totalPages);
 			req.getRequestDispatcher("/WEB-INF/view/board/eventList.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
