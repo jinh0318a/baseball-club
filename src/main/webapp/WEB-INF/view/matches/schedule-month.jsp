@@ -58,7 +58,7 @@
 					</table>
 				</c:when>
 				<c:otherwise>
-	경기 일정이 없습니다.
+	<h1 style="text-align: center;">경기 일정이 없습니다.</h1>
 	</c:otherwise>
 			</c:choose>
 		</div>

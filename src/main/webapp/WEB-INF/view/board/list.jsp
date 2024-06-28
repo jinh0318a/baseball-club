@@ -22,6 +22,7 @@
 						<th>제목</th>
 						<th>작성자</th>
 						<th>작성일</th>
+						<th>조회수</th>
 					</tr>
 				</thead>
 				<c:forEach var="one" items="${announcement }">
@@ -34,6 +35,7 @@
 							class="no-deco-link fw-b"> ${one.title } </a></td>
 						<td>${one.writerId }</td>
 						<td>${one.writedAt }</td>
+						<td>${one.views }</td>
 					</tr>
 				</c:forEach>
 				<c:forEach var="one" items="${boards }">
@@ -45,6 +47,7 @@
 							class="no-deco-link"> ${one.board.title } (${one.commentCount })</a></td>
 						<td>${one.board.writerId }</td>
 						<td>${one.board.writedAt }</td>
+						<td>${one.board.views }</td>
 					</tr>
 				</c:forEach>
 			</table>
