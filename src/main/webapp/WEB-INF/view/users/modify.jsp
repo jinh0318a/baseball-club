@@ -86,10 +86,11 @@
 									for="kiwoom-radio">키움</label>
 							</div>
 						</div>
-						<div style="display: flex; justify-content: center; margin-top: 80px; gap: 20px;">
-							<button class="submit" style="margin :0">수정</button>
-							<a href="${pageContext.servletContext.contextPath }/mypage"><button style="margin :0"
-									type="button" class="cancel">취소</button></a>
+						<div
+							style="display: flex; justify-content: center; margin-top: 80px; gap: 20px;">
+							<button class="submit" style="margin: 0">수정</button>
+							<a href="${pageContext.servletContext.contextPath }/mypage"><button
+									style="margin: 0" type="button" class="cancel">취소</button></a>
 						</div>
 					</form>
 				</div>
