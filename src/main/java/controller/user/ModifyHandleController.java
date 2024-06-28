@@ -44,7 +44,7 @@ public class ModifyHandleController extends HttpServlet {
 
 			boolean r = userDao.updateUser(temp);
 			if (r) {
-				req.getSession().setAttribute("club", temp.getClub());
+				req.getSession().setAttribute("authUser", temp);
 				resp.sendRedirect(req.getContextPath() + "/index");
 			} else {
 				resp.sendRedirect(req.getContextPath() + "/error");

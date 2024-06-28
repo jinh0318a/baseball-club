@@ -20,7 +20,7 @@ public class ModifyController extends HttpServlet {
 			resp.sendRedirect(req.getContextPath() + "/login");
 			return;
 		}
-		req.getSession().setAttribute("club", authUser.getClub());
+		
 		req.getRequestDispatcher("/WEB-INF/view/users/modify.jsp").forward(req, resp);
 
 	}
