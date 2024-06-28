@@ -8,7 +8,7 @@
 <script src="https://kit.fontawesome.com/053f0cac61.js"
 	crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>주간 일정</title>
+<title>그공놀 | 주간 일정</title>
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>

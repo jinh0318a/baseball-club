@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>투수 순위</title>
+<title>그공놀 | 투수 순위</title>
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>

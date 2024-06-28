@@ -6,7 +6,7 @@
 <script src="https://kit.fontawesome.com/053f0cac61.js"
 	crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>baseball-club</title>
+<title>그공놀</title>
 </head>
 <body>
 	<div>
@@ -23,7 +23,7 @@
 			</a> <a href="https://heroesbaseball.co.kr/index.do" target="_blank"
 				title="키움히어로즈"><img src="img/kiwoon-heros.jpg" /></a> <a
 				href="https://www.hanwhaeagles.co.kr/index.do" target="_blank"
-				title="한화이글스"><img src="img/hanwha-eagles.jpg" /> </a> <a
+				title="한화이글스"><img src="img/hanhwa-eagles.jpg" /> </a> <a
 				href="https://www.samsunglions.com/" target="_blank" title="삼성라이온즈"><img
 				src="img/kia-tigers.jpg" /> </a> <a
 				href="https://www.giantsclub.com/html/" target="_blank"

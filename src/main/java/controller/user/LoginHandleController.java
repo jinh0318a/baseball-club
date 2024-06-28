@@ -24,7 +24,7 @@ public class LoginHandleController extends HttpServlet {
 			String password = request.getParameter("password");
 			User user = userDao.findById(userId);
 			if (userId == null || userId.isBlank() || password == null || password.isBlank() || user == null) {
-				response.sendRedirect(request.getContextPath() + "/error");
+				request.getRequestDispatcher("/WEB-INF/view/users/login-error.jsp").forward(request, response);
 				return;
 			}
 
@@ -35,7 +35,7 @@ public class LoginHandleController extends HttpServlet {
 				request.getSession().setAttribute("authUser", user);
 				response.sendRedirect(request.getContextPath() + url);
 			} else {
-				response.sendRedirect(request.getContextPath() + "/error");
+				request.getRequestDispatcher("/WEB-INF/view/users/login-error.jsp").forward(request, response);
 			}
 			
 		} catch (SQLException e) {
