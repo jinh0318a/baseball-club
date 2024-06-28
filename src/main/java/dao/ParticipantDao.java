@@ -138,4 +138,27 @@ public class ParticipantDao {
 		}
 
 	}
+
+	public boolean deleteParticipantByUser(String userId) throws Exception {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+
+		try (Connection conn = ods.getConnection()) {
+
+			PreparedStatement stmt = conn
+					.prepareStatement("delete PARTICIPANTS where user_id=?");
+
+			stmt.setString(1, userId);
+
+			int r = stmt.executeUpdate();
+			return r >= 0 ? true : false;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 }

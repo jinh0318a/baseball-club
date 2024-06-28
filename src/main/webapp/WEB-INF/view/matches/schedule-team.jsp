@@ -134,10 +134,10 @@
 			</div>
 			<div class="move-schedule">
 				<a
-					href="${pageContext.servletContext.contextPath }/schedule-month?month=${previous }"
+					href="${pageContext.servletContext.contextPath }/schedule-team?month=${previous }"
 					class="no-deco-link"><i class="fa-solid fa-caret-left fa-xl"></i></a>
 				<span class="emphasize">${month }</span>월 일정 <a
-					href="${pageContext.servletContext.contextPath }/schedule-month?month=${next }"
+					href="${pageContext.servletContext.contextPath }/schedule-team?month=${next }"
 					class="no-deco-link"><i class="fa-solid fa-caret-right fa-xl"></i></a>
 			</div>
 			<div>

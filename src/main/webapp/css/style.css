@@ -8,13 +8,7 @@
 	font-family: "Orbit", sans-serif;
 	font-weight: 400;
 	font-style: normal;
-}
-
-* {
 	box-sizing: border-box;
-	font-family: "Orbit", sans-serif;
-	font-weight: 400;
-	font-style: normal;
 }
 
 a {
@@ -559,6 +553,21 @@ a {
 	box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
 }
 
+.cancel {
+	border: none;
+	padding: 15px 70px;
+	border-radius: 8px;
+	display: block;
+	margin: auto;
+	margin-top: 80px;
+	background: #f23728;
+	color: #fff;
+	font-weight: bold;
+	-webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+	-moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+	box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+}
+
 /* 회원가입 클래스 */
 .sign {
 	margin: auto;
@@ -601,7 +610,7 @@ a {
 	align-items: center;
 	justify-content: center;
 	align-self: center;
-	height: 80%;
+	min-height: 80%;
 	width: 80%;
 	margin: 50px auto;
 }

@@ -13,42 +13,46 @@
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
 	<div style="padding: 8px; margin: auto; width: 1140px;">
 		<div style="margin: auto; text-align: center; margin-bottom: 8px;">
-			<h2>
-				<span style="color: blue;">${word }</span>검색결과
-			</h2>
+			<h1>
+				<span style="color: blue;">${word }</span> 검색결과
+			</h1>
 		</div>
 		<div style="margin: auto; text-align: center;">
-			<h3>게시판</h3>
-			<c:choose>
-				<c:when test="${boardsize != 0 }">
-					<div>
-						<table
-							style="margin-left: auto; margin-right: auto; text-align: center">
-							<tr>
-								<th style="width:5%;">게시판</th>
-								<th style="width:5%;">말머리</th>
-								<th style="width:15%;">제목</th>
-								<th style="width:8%;">작성자</th>
-							</tr>
-							<c:forEach var="one" items="${boards }">
-								<tr>
-									<td>${one.type }</td>
-									<td>${one.category }</td>
-									<td><a
-										href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
-										class="no-deco-link"> ${one.title } </a></td>
-									<td>${one.writerId }</td>
-								</tr>
-							</c:forEach>
-						</table>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<p>게시판 검색 결과가 없습니다.</p>
-				</c:otherwise>
-			</c:choose>
+			<div class="container">
+				<div class="board-list">
+					<c:choose>
+						<c:when test="${boardsize != 0 }">
+							<div>
+								<table
+									style="margin-left: auto; margin-right: auto; text-align: center">
+									<thead>
+										<tr>
+											<th style="width: 5%;">게시판</th>
+											<th style="width: 5%;">말머리</th>
+											<th style="width: 15%;">제목</th>
+											<th style="width: 8%;">작성자</th>
+										</tr>
+									</thead>
+									<c:forEach var="one" items="${boards }">
+										<tr>
+											<td>${one.type }</td>
+											<td>${one.category }</td>
+											<td><a
+												href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
+												class="no-deco-link"> ${one.title } </a></td>
+											<td>${one.writerId }</td>
+										</tr>
+									</c:forEach>
+								</table>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<p style="text-align: center;">검색 결과가 없습니다.</p>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
 		</div>
-
 
 	</div>
 </body>

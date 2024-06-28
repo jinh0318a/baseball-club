@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<div
-			style="align-items: center; display: flex; justify-content: space-around; margin-top: 10px; margin-bottom: 10px;">
+			style="align-items: center; display: flex; justify-content: space-around; margin-top: 30px; margin-bottom: 30px;">
 			<a href="${pageContext.servletContext.contextPath }/team-ranking"
 				class="no-deco-link">순위</a> <a
 				href="${pageContext.servletContext.contextPath }/schedule"
