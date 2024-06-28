@@ -15,7 +15,13 @@
 	<div class="mypage">
 		<div class="mypage-box">
 			<div class="inbox">
-				<h2>마이페이지</h2>
+				<div style="display: flex; align-items: center; justify-content: flex-start;">
+					<h2>마이페이지</h2>
+					<a
+						href="${pageContext.servletContext.contextPath }/profile?userId=${userId}">
+						<i class="fa-solid fa-user no-deco-link mx-2"></i>
+					</a>
+				</div>
 				<a href="${pageContext.servletContext.contextPath }/modify"
 					class="no-deco-link">
 					<button type="button" class="button button2">회원정보수정</button>

@@ -18,6 +18,9 @@ public class MyPageController extends HttpServlet{
 			resp.sendRedirect(req.getContextPath() + "/login");
 			return;
 		}
+		
+		String userId= authUser.getUserId();
+		req.setAttribute("userId", userId);
 		req.getRequestDispatcher("/WEB-INF/view/users/mypage.jsp").forward(req, resp);
 	}
 }

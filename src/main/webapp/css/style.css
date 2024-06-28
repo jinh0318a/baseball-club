@@ -711,14 +711,15 @@ a {
 
 .mypage button {
 	text-align: center;
-	margin: 20px 0;
+	margin: 10px 0;
 }
 
 .mypage h2 {
 	text-align: left;
 	text-indent: 30px;
-	font-size: 2.0rem;
+	font-size: 1.5rem;
 	font-weight: bold;
+	padding: 5px;
 }
 
 .mypage .inbox {
