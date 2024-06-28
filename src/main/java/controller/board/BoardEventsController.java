@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.BoardDao;
+import dao.CommentDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vo.Board;
+import vo.BoardandComment;
 
 @WebServlet("/board/event")
 public class BoardEventsController extends HttpServlet {
@@ -30,14 +32,17 @@ public class BoardEventsController extends HttpServlet {
 			int count = boardDao.countAll();
 			int totalPages = count / size + (count % size > 0 ? 1 : 0);
 
-			List<Board> eventBoard = new ArrayList<Board>();
+			CommentDao commentDao = new CommentDao();
+			List<BoardandComment> eventBoards = new ArrayList<BoardandComment>();
 			for (Board one : board) {
-				String type = one.getType();
-				if (type.equals("이벤트")) {
-					boardDao.searchBoardByType(type);
-					eventBoard.add(one);
+				BoardandComment boardcomment = new BoardandComment();
+				if (one.getType().equals("이벤트")) {
+					boardcomment.setBoard(one);
+					boardcomment.setCommentCount(commentDao.countComment(one.getBoardId()));
+					eventBoards.add(boardcomment);
 				}
 			}
+
 			List<Board> announcement = new ArrayList<Board>();
 
 			for (Board one : board) {
@@ -48,7 +53,7 @@ public class BoardEventsController extends HttpServlet {
 				}
 			}
 
-			req.setAttribute("eventBoard", eventBoard);
+			req.setAttribute("eventBoard", eventBoards);
 			req.setAttribute("announcement", announcement);
 			req.setAttribute("totalPages", totalPages);
 			req.getRequestDispatcher("/WEB-INF/view/board/eventList.jsp").forward(req, resp);
