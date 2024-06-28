@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>팔로잉</title>
+<title>그공놀 | 팔로잉</title>
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>

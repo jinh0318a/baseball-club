@@ -18,6 +18,7 @@
 				<div class="no-deco-link">
 					<a href="${pageContext.servletContext.contextPath }/index"> <i
 						class="fa-solid fa-baseball-bat-ball fa-3x no-deco-link"></i>
+						<span class="no-deco-link" style="font-size: xx-large; font-weight: bold;">그공놀</span>
 					</a>
 				</div>
 			</div>

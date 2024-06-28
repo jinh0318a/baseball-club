@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 상세보기</title>
+<title>그공놀 | 게시글 상세보기</title>
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath }/css/style.css">
 </head>

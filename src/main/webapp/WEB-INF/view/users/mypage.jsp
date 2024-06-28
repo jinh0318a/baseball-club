@@ -22,6 +22,9 @@
 				</a> <a href="${pageContext.servletContext.contextPath }/following"
 					class="no-deco-link">
 					<button type="button" class="button button2">팔로잉</button>
+				</a> <a href="${pageContext.servletContext.contextPath }/myboard"
+					class="no-deco-link">
+					<button type="button" class="button button2">작성글</button>
 				</a> <a href="${pageContext.servletContext.contextPath }/withdraw"
 					class="no-deco-link">
 					<button type="button" class="button button2">회원탈퇴</button>

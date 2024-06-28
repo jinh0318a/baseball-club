@@ -537,7 +537,17 @@ a {
 .left {
 	background: linear-gradient(-45deg, #dcd7e0, #fff);
 }
-
+.left .error-box{
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	background: white ; 
+	opacity : 0.75;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: bold;
+	color: #2d2d2d;
+	padding: 10px;
+}
 .submit {
 	border: none;
 	padding: 15px 70px;
@@ -810,7 +820,7 @@ a {
 }
 .profile-box {
 	width: 550px;
-	height: 350px;
+	height: 380px;
 	position: absolute;
 	top: 40%;
 	left: 50%;
@@ -830,6 +840,10 @@ a {
 .profile p {
 	padding: 0;
 	margin: 10px;
+}
+.profile img{
+	width: 150px; 
+	height: 180px;
 }
 
 /*회원탈퇴 클래스*/
