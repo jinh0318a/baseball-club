@@ -15,11 +15,11 @@
 		<div class="board">
 			<div class="board_box">
 				<div
-					style="padding: 60px 10px 30px 10px; border-bottom: 1px solid #ccc; margin-bottom: 10px;">
-					<h2 style="text-align: center">
+					style="padding: 20px 10px 30px 10px; border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+					<h2 style="text-align: center;">
 						<c:out value="${board.title }" />
 					</h2>
-					<div style="display: flex; justify-content: space-between;">
+					<div style="display: flex; justify-content: space-between; margin-top: 10px; margin-bottom: 20px;">
 						<div style="text-indent: 10px">
 							<span>작성자</span>
 							<c:if test="${empty board.writerId }">
@@ -29,17 +29,17 @@
 								href="${pageContext.servletContext.contextPath }/profile?userId=${board.writerId }"
 								class="no-deco-link">${board.writerId }</a></span>
 						</div>
-						<div style="text-indent: 10px">
+						<div style="text-indent: 10px;">
 							<span>작성일</span> <span>${board.writedAt}<span> | <span>조회</span>
 									<span>${board.views }</span>
 						</div>
 					</div>
-					<div style="margin-left: 9px;">
+					<div style="margin-left: 9px; margin-top: 20px;">
 						<pre style="font-size: 20px;"><c:out value="${board.body }" />
 					</pre>
 					</div>
 					<c:if test="${!r && board.type == '이벤트'}">
-						<h3 style="text-align: center;">현재 참여 인원 : ${capactiy }</h3>
+						<h3 style="text-align: center; margin-top: 20px;">현재 참여 인원 : ${capactiy }</h3>
 						<div
 							style="display: flex; justify-content: center; text-align: center;">
 							<c:if test="${clubEvent && !duplicate}">
@@ -90,11 +90,10 @@
 						method="post" style="display: flex; align-items: stretch;">
 						<input type="hidden" name="boardId" value="${board.boardId }">
 						<textarea name="commentBody"
-							style="border-line: 1px;; resize: none; flex: 2; padding: 8px;"></textarea>
-						<button type="submit" class="p-2 fs-4 border-rounded"
-							style="margin-left: 8px; background-color: #bbd2e8;">작성</button>
+							style="border-line: 1px;; resize: none; flex: 1; padding: 8px;"></textarea>
+						<button type="submit" class="p-2 fs-4 border-rounded" style="background-color: #bbd2e8;">작성</button>
 					</form>
-					<b>댓글 (${count })</b>
+					<p style="font-size: 15pt; margin-top: 10px;">댓글 (${count })</p>
 					<div>
 						<c:forEach var="i" items="${comments }">
 							<p>
