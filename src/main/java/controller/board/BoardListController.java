@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vo.Board;
+import vo.BoardandComment;
 
 @WebServlet("/board/list")
 public class BoardListController extends HttpServlet {
@@ -27,6 +28,7 @@ public class BoardListController extends HttpServlet {
 			int end = size * p;
 
 			BoardDao boardDao = new BoardDao();
+			CommentDao commentDao = new CommentDao();
 			List<Board> board = boardDao.findByAll(start, end);
 
 			int count = boardDao.countAll();
@@ -41,19 +43,20 @@ public class BoardListController extends HttpServlet {
 					announcement.add(one);
 				}
 			}
-			List<Board> boardList = new ArrayList<Board>();
-			
-			for (Board one : board) {
-				String type = one.getType();
-				if (type.equals("광장")) {
-					boardDao.searchBoardByType(type);
-					boardList.add(one);
+			List<BoardandComment> boards = new ArrayList<BoardandComment>();
 
+			for (Board one : board) {
+				BoardandComment boardcomment = new BoardandComment();
+				if (one.getType().equals("광장")) {
+					boardcomment.setBoard(one);
+					boardcomment.setCommentCount(commentDao.countComment(one.getBoardId()));
+					boards.add(boardcomment);
 				}
 			}
+			
 			req.setAttribute("announcement", announcement);
-			req.setAttribute("boardList", boardList);
 			req.setAttribute("totalPages", totalPages);
+			req.setAttribute("boards", boards);
 
 			req.getRequestDispatcher("/WEB-INF/view/board/list.jsp").forward(req, resp);
 		} catch (Exception e) {

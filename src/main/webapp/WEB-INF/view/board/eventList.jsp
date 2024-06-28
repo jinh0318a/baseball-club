@@ -38,13 +38,13 @@
 				</c:forEach>
 				<c:forEach var="one" items="${eventBoard }">
 					<tr>
-						<td>${one.type }</td>
-						<td>${one.category }</td>
+						<td>${one.board.type }</td>
+						<td>${one.board.category }</td>
 						<td><a
-							href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
-							class="no-deco-link"> ${one.title } </a></td>
-						<td>${one.writerId }</td>
-						<td>${one.writedAt }</td>
+							href="${pageContext.servletContext.contextPath }/board?boardId=${one.board.boardId }"
+							class="no-deco-link"> ${one.board.title } (${one.commentCount })</a></td>
+						<td>${one.board.writerId }</td>
+						<td>${one.board.writedAt }</td>
 					</tr>
 				</c:forEach>
 			</table>

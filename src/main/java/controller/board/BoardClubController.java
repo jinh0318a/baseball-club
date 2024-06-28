@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.BoardDao;
+import dao.CommentDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vo.Board;
+import vo.BoardandComment;
 
 @WebServlet("/board/club")
 public class BoardClubController extends HttpServlet {
@@ -25,21 +27,24 @@ public class BoardClubController extends HttpServlet {
 			int end = size * p;
 
 			BoardDao boardDao = new BoardDao();
+			CommentDao commentDao = new CommentDao();
 			List<Board> board = boardDao.findByAll(start, end);
 
 			int count = boardDao.countAll();
 			int totalPages = count / size + (count % size > 0 ? 1 : 0);
 
-			List<Board> clubBoard = new ArrayList<Board>();
+			List<BoardandComment> clubBoards = new ArrayList<BoardandComment>();
+
 			for (Board one : board) {
-				String type = one.getType();
-				if (type.equals("구단")) {
-					boardDao.searchBoardByType(type);
-					clubBoard.add(one);
+				BoardandComment boardcomment = new BoardandComment();
+				if (one.getType().equals("구단")) {
+					boardcomment.setBoard(one);
+					boardcomment.setCommentCount(commentDao.countComment(one.getBoardId()));
+					clubBoards.add(boardcomment);
 				}
 			}
+
 			List<Board> announcement = new ArrayList<Board>();
-			
 
 			for (Board one : board) {
 				String type = one.getType();
@@ -48,7 +53,7 @@ public class BoardClubController extends HttpServlet {
 					announcement.add(one);
 				}
 			}
-			req.setAttribute("clubBoard", clubBoard);
+			req.setAttribute("clubBoard", clubBoards);
 			req.setAttribute("announcement", announcement);
 			req.setAttribute("totalPages", totalPages);
 			req.getRequestDispatcher("/WEB-INF/view/board/clubList.jsp").forward(req, resp);
