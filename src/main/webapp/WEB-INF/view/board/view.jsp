@@ -105,7 +105,7 @@
 									<a
 										href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }"
 										class="no-deco-link"><button type="button"
-											style="background-color: #bbd2e8;">
+											style="background-color: #bbd2e8; padding: 10px;">
 											<i class="fa-regular fa-thumbs-up" style="color: #444;"></i>
 										</button></a>
 								</c:if>

@@ -45,7 +45,11 @@
 						<td>${one.board.category }</td>
 						<td><a
 							href="${pageContext.servletContext.contextPath }/board?boardId=${one.board.boardId }"
-							class="no-deco-link"> ${one.board.title } (${one.commentCount })</a></td>
+							class="no-deco-link"> ${one.board.title } <c:if
+									test="${one.commentCount != 0 }">
+									<span class="emphasize">[${one.commentCount }]</span>
+								</c:if>
+						</a></td>
 						<td>${one.board.writerId }</td>
 						<td>${one.board.writedAt }</td>
 						<td>${one.board.views }</td>
