@@ -42,7 +42,7 @@ public class BoardDao {
 		try (Connection conn = ods.getConnection()) {
 
 			PreparedStatement stmt = conn.prepareStatement(
-					"SELECT * FROM (SELECT ROWNUM RN, g.* FROM (SELECT * FROM BOARDS ORDER BY TITLE)g) WHERE RN BETWEEN ? AND ?");
+					"SELECT * FROM (SELECT ROWNUM RN, g.* FROM (SELECT * FROM BOARDS ORDER BY WRITED_AT desc)g) WHERE RN BETWEEN ? AND ?");
 			stmt.setInt(1, start);
 			stmt.setInt(2, end);
 			ResultSet rs = stmt.executeQuery();

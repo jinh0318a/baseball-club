@@ -34,26 +34,26 @@
 									<span>${board.views }</span>
 						</div>
 					</div>
-					<div>
-						<pre>
-					<c:out value="${board.body }" />
-				</pre>
+					<div style="margin-left: 9px;">
+						<pre style="font-size: 20px;"><c:out value="${board.body }" />
+					</pre>
 					</div>
-					<h3 style="text-align: center;">현재 참여 인원 : ${capactiy }</h3>
-					<c:if test="${!r }">
+					<c:if test="${!r && board.type == '이벤트'}">
+						<h3 style="text-align: center;">현재 참여 인원 : ${capactiy }</h3>
 						<div
 							style="display: flex; justify-content: center; text-align: center;">
 							<c:if test="${clubEvent && !duplicate}">
 								<a
 									href="${pageContext.servletContext.contextPath }/participant?boardId=${board.boardId}">
-									<button type="button" style="margin-left: 10px">참가신청</button>
+									<button type="button"
+										style="margin-left: 10px; background-color: #bbd2e8;">참가신청</button>
 								</a>
 							</c:if>
 							<c:if test="${clubEvent && duplicate }">
 								<a
 									href="${pageContext.servletContext.contextPath }/participant/cancel?boardId=${board.boardId}">
 									<button type="button"
-										style="margin-left: 10px; background-color: #FE2E2E">참가취소</button>
+										style="margin-left: 10px; background-color: #FE8080;">참가취소</button>
 								</a>
 							</c:if>
 						</div>
@@ -63,19 +63,21 @@
 							<c:if test="${sessionScope.authUser.userId == board.writerId}">
 								<a
 									href="${pageContext.servletContext.contextPath }/board/delete?boardId=${board.boardId }">
-									<button type="button">삭제</button>
+									<button type="button" style="background-color: #FE8080;">삭제</button>
 								</a>
 								<a
 									href="${pageContext.servletContext.contextPath }/board/update?boardId=${board.boardId }">
-									<button type="button">수정</button>
+									<button type="button" style="background-color: #bbd2e8;">수정</button>
 								</a>
 							</c:if>
 						</div>
 						<div>
 							<a href="${pageContext.servletContext.contextPath }/board/new">
-								<button type="button" class="bt bt2" style="margin-right: 10px;">글쓰기</button>
+								<button type="button" class="bt bt2"
+									style="margin-right: 10px; background-color: #bbd2e8;">글쓰기</button>
 							</a> <a href="${pageContext.servletContext.contextPath }/board/list">
-								<button type="button" class="bt bt2">목록</button>
+								<button type="button" class="bt bt2"
+									style="background-color: #bbd2e8;">목록</button>
 							</a>
 						</div>
 					</div>
@@ -90,7 +92,7 @@
 						<textarea name="commentBody"
 							style="border-line: 1px;; resize: none; flex: 2; padding: 8px;"></textarea>
 						<button type="submit" class="p-2 fs-4 border-rounded"
-							style="margin-left: 8px;">작성</button>
+							style="margin-left: 8px; background-color: #bbd2e8;">작성</button>
 					</form>
 					<b>댓글 (${count })</b>
 					<div>
@@ -103,12 +105,15 @@
 									test="${sessionScope.authUser != null && i.writerId != sessionScope.authUser.userId }">
 									<a
 										href="${pageContext.servletContext.contextPath }/comment-like?commentId=${i.commentId }"
-										class="no-deco-link"><button type="button">추천</button></a>
+										class="no-deco-link"><button type="button"
+											style="background-color: #bbd2e8;">
+											<i class="fa-regular fa-thumbs-up" style="color: #444;"></i>
+										</button></a>
 								</c:if>
 								<c:if test="${sessionScope.authUser.userId == i.writerId }">
 							| <a
 										href="${pageContext.servletContext.contextPath }/comment-delete?commentId=${i.commentId }"><button
-											type="button" style="background-color: #FE2E2E">삭제</button></a>
+											type="button" style="background-color: #FE8080;">삭제</button></a>
 								</c:if>
 							</p>
 						</c:forEach>

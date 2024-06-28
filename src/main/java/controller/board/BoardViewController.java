@@ -51,7 +51,7 @@ public class BoardViewController extends HttpServlet {
 						userIds.add(one.getUserId());
 					}
 				}
-
+				
 				int capacity = participantDao.countCapacity(boardId);
 				
 				CommentDao commentDao = new CommentDao();

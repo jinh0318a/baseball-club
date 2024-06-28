@@ -19,6 +19,16 @@ public class JoinHandleController extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
+			if (request.getParameter("userId") == null || request.getParameter("userId").isBlank()
+					|| request.getParameter("password") == null || request.getParameter("password").isBlank()
+					|| request.getParameter("nickname") == null || request.getParameter("nickname").isBlank()
+					|| request.getParameter("birth") == null || request.getParameter("birth").isBlank()
+					|| request.getParameter("gender") == null || request.getParameter("gender").isBlank()
+					|| request.getParameter("email") == null || request.getParameter("email").isBlank()
+					|| request.getParameter("club") == null || request.getParameter("club").isBlank()) {
+				response.sendRedirect(request.getContextPath() + "/error");
+				return;
+			}
 			UserDao userDao = new UserDao();
 			String userId = request.getParameter("userId");
 			String password = request.getParameter("password");
@@ -28,13 +38,15 @@ public class JoinHandleController extends HttpServlet {
 			String email = request.getParameter("email");
 			String club = request.getParameter("club");
 			User user = new User(userId, password, nickname, birth, gender, email, club, "user");
-			if(userDao.findById(userId) != null) {
+
+			if (userDao.findById(userId) != null) {
 				response.sendRedirect(request.getContextPath() + "/error");
-			}else {
+				return;
+			} else {
 				userDao.saveUser(user);
 				response.sendRedirect(request.getContextPath() + "/login");
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			response.sendRedirect(request.getContextPath() + "/error");

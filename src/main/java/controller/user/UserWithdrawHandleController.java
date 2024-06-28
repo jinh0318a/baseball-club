@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import dao.BoardDao;
 import dao.CommentDao;
 import dao.FollowDao;
+import dao.ParticipantDao;
 import dao.UserDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,18 +30,22 @@ public class UserWithdrawHandleController extends HttpServlet {
 			BoardDao boardDao = new BoardDao();
 			FollowDao followDao = new FollowDao();
 			CommentDao commentDao = new CommentDao();
+			ParticipantDao participantDao = new ParticipantDao();
 			boolean r = false;
 			if(authUser.getPassword().equals(req.getParameter("password"))) {
+				boolean e = participantDao.deleteParticipantByUser(authUser.getUserId());
 				boolean a = commentDao.deleteCommentByUser(authUser.getUserId());
 				boolean b = boardDao.deleteByWriterId(authUser.getUserId());
 				boolean c = followDao.deleteUser(authUser.getUserId());
 				boolean d = userDao.deleteUser(authUser.getUserId());
-				if(a && b && c && d) {
+				
+				if(a && b && c && d && e) {
 					r = true;
 				}
 			}
 			
 			if(r) {
+				req.getSession().invalidate();
 				resp.sendRedirect(req.getContextPath()+"/login");
 			}else {
 				resp.sendRedirect(req.getContextPath()+"/error");
