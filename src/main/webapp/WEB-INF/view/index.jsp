@@ -19,34 +19,26 @@
 		</div>
 		<div class="club-link">
 			<a href="https://tigers.co.kr/" target="_blank" title="기아타이거즈"> <img
-				src="https://i.namu.wiki/i/JkdlAhhQcnMmcqrazf1FlVsvrG_tWJFfE9ye2uMTVK60MIiRYfqPCcGI4ofXWDS4YnKjedYoyIvKYbCzJ6qpoZvyYnN9vtk1PbQzCf8wka3u8E2voypso3qaSfbe7P9ocxAXbdCEynJcCRmBp7sD-w.svg" />
+				src="img/kia-tigers.jpg" />
 			</a> <a href="https://heroesbaseball.co.kr/index.do" target="_blank"
-				title="키움히어로즈"><img
-				src="https://i.namu.wiki/i/Qub5dLxWr5nWffYFnvtlK2AAdJ6Ei1DLXiGW52owxP3DhfZImoOrRUnoI4WXNcNl6VJ7b0G6pVLdcsAp0EScyjZd5mNU7JonX4kmjCZ7BMNPc-qgCN3D8GoxWiwL7tX3-1l8lrmgicTEZfDSECgqXA.svg" /></a>
-			<a href="https://www.hanwhaeagles.co.kr/index.do" target="_blank"
-				title="한화이글스"><img
-				src="https://i.namu.wiki/i/dJMR7enHxv_U53_auaywWJ4KT9UmYGZxjxlNKPA8o_A-wvk22vUOukMgk6lJBxz-UiGdQPir4jMQNIV9WJyl_Pw5sfSL6nYwRzHeVfd-OiJT9YkuVfjNDCNMcxFc7s8kk0nz_2a_zMQ0pN7ZZI0aYA.svg" />
-			</a> <a href="https://www.samsunglions.com/" target="_blank"
-				title="삼성라이온즈"><img
-				src="https://i.namu.wiki/i/cMZ4a4jUU7GFisAbHVU7FFCeUZeb5U2kz5JFwn-Oy4hZgh-QKs34f3-w9xRBEwPgyK73V_VRu6RA68PWZPHDlFOceN_1HihQ1R1lHyh12UzY1feqXl6h9olx1JizZVbP9O9GqGkZz0KUGSvomo9J9g.svg" />
-			</a> <a href="https://www.giantsclub.com/html/" target="_blank"
-				title="롯데자이언츠"><img
-				src="https://i.namu.wiki/i/JKabDmgmnwQ7HcK68kOJiicJ074aI41QWe0ZQCpLKFoRkA1eXqBlVUdZNVurwF1_Eu5QHwm45JkSTQSPlmpSFGUNS0gS92WiNMLr9I80syKnreng2ndUnBR2SX0iAFAag6PZBU3olhUejZ5KkINMHQ.svg" /></a>
+				title="키움히어로즈"><img src="img/kiwoon-heros.jpg" /></a> <a
+				href="https://www.hanwhaeagles.co.kr/index.do" target="_blank"
+				title="한화이글스"><img src="img/hanwha-eagles.jpg" /> </a> <a
+				href="https://www.samsunglions.com/" target="_blank" title="삼성라이온즈"><img
+				src="img/kia-tigers.jpg" /> </a> <a
+				href="https://www.giantsclub.com/html/" target="_blank"
+				title="롯데자이언츠"><img src="img/lotte-giants.jpg" /></a>
 		</div>
 		<div class="club-link">
 			<a href="https://www.doosanbears.com/" target="_blank" title="두산베어스"><img
-				src="https://i.namu.wiki/i/JfBCPwmvKM-gyBQi1J9IsWixMaYsp1MdmAtk7wvpBitQLSioLYI45vYA7XLkjmFP1udeIYSzKHPlXqTTA1aIgXTUgKMWJZiP36OowNC1RlYiLSlbAW7druy-JaY6Hn8ctQq7CaNxvMLWCqE1vVNbjA.svg" />
-			</a><a
+				src="img/doosan-bears.jpg" /> </a><a
 				href="https://www.lgtwins.com/service/html.ncd?view=/pc_twins/twins_main/twins_main"
-				target="_blank" title="LG트윈스"><img
-				src="https://i.namu.wiki/i/JMNSXMOBgP23YaYnROHsjYL-UxC_q7zESQ0cGzRbs_r20OxsIignk6ssM2lwvkaxoH-ea0P5u3_fzcmPcSzqFM1ubAh7sulPTr--i3JXrSBSw2Gy1pyP1wMrEtj8RDKV3KbOOxNFn0-_ICryaS2Y6Q.svg" />
-			</a><a href="https://www.ktwiz.co.kr/" target="_blank" title="KT위즈"><img
-				src="https://i.namu.wiki/i/VGqR9M0T8XW7vDayxnq29LIiCwhtnbn1wlD6LBKjQIKjpHIg6HatiFy2T3Q5t5TBO5hGY16GBQeGmMycgncxzw.svg" /></a>
-			<a href="https://www.ssglanders.com/main" target="_blank"
-				title="SSG랜더스"><img
-				src="https://i.namu.wiki/i/wcOGW0ui6neqGNcccYyy7FInd2gXCgQFcZGc9P-rL84NTJ4gmLPi2x-FfC7Z6JppstoWxxMjMu7BX-0tEYiW_XMwNM2hlPfWMyUGmfo1noR-52qPjpr436P5uVyrVKQEBxNaToPWkYqcPKm4QPBDVg.svg" /></a>
+				target="_blank" title="LG트윈스"><img src="img/lg-twins.jpg" /> </a><a
+				href="https://www.ktwiz.co.kr/" target="_blank" title="KT위즈"><img
+				src="img/kt-wiz.jpg" /></a> <a href="https://www.ssglanders.com/main"
+				target="_blank" title="SSG랜더스"><img src="img/ssg-landers.jpg" /></a>
 			<a href="https://www.ncdinos.com/" target="_blank" title="NC다이노스"><img
-				src="https://i.namu.wiki/i/7U4K0G1nqS7g6opb89q9BWS3o4UkskaGPGTgVqpLwQyBaLA6dwhZ-v_giJ0AQqZawbG96f8ucODhyGJd4QBuu8uXKD9kfD94XfEfLH_OwGeaHMMYKiQepXT9liqeA5CLoiQnOYziqrr8qBL4o-_QWw.svg" /></a>
+				src="img/nc-dinos.png" /></a>
 		</div>
 
 		<div class="today-game">
@@ -91,7 +83,7 @@
 			</c:choose>
 		</div>
 		<div>
-			<p>🔥 게시판별 조회 수 인기글</p>
+			<p class="fw-b">🔥 게시판별 조회 수 인기글</p>
 		</div>
 		<div class="index-board">
 			<div class="popular-board">
@@ -108,8 +100,7 @@
 							<td><a
 								href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
 								class="no-deco-link"> ${one.title } </a></td>
-							<td>${one.views }<i class="fa-regular fa-thumbs-up"
-								style="color: #444;"></i></td>
+							<td><i class="fa-regular fa-eye" style="color: #444;"></i>&nbsp;${one.views }</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -127,8 +118,7 @@
 							<td><a
 								href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
 								class="no-deco-link"> ${one.title } </a></td>
-							<td>${one.views }<i class="fa-regular fa-thumbs-up"
-								style="color: #444;"></i></td>
+							<td><i class="fa-regular fa-eye" style="color: #444;"></i>&nbsp;${one.views }</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -147,8 +137,7 @@
 							<td><a
 								href="${pageContext.servletContext.contextPath }/board?boardId=${one.boardId }"
 								class="no-deco-link"> ${one.title } </a></td>
-							<td>${one.views }<i class="fa-regular fa-thumbs-up"
-								style="color: #444;"></i></td>
+							<td><i class="fa-regular fa-eye" style="color: #444;"></i>&nbsp;${one.views }</td>
 						</tr>
 					</c:forEach>
 				</table>
