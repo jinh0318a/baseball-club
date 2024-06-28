@@ -47,18 +47,19 @@
 		</div>
 		<div
 			style="align-items: center; display: flex; justify-content: space-around; margin-top: 30px; margin-bottom: 30px;">
+
 			<a href="${pageContext.servletContext.contextPath }/team-ranking"
-				class="no-deco-link">순위</a> <a
-				href="${pageContext.servletContext.contextPath }/schedule"
-				class="no-deco-link">경기일정</a> <a
-				href="${pageContext.servletContext.contextPath }/record"
-				class="no-deco-link">기록실</a> <a
-				href="${pageContext.servletContext.contextPath }/board/list"
-				class="no-deco-link">자유게시판</a> <a
-				href="${pageContext.servletContext.contextPath }/board/club"
-				class="no-deco-link">구단게시판</a> <a
-				href="${pageContext.servletContext.contextPath }/board/event"
-				class="no-deco-link">이벤트게시판</a>
+				class="no-deco-link ${mode == 'team-ranking' ? 'underline' : '' }">순위</a>
+			<a href="${pageContext.servletContext.contextPath }/schedule"
+				class="no-deco-link ${mode == 'schedule' ? 'underline' : '' }">경기일정</a>
+			<a href="${pageContext.servletContext.contextPath }/record"
+				class="no-deco-link ${mode == 'record' ? 'underline' : '' }">기록실</a>
+			<a href="${pageContext.servletContext.contextPath }/board/list"
+				class="no-deco-link ${mode == 'board/list' ? 'underline' : '' }">자유게시판</a>
+			<a href="${pageContext.servletContext.contextPath }/board/club"
+				class="no-deco-link ${mode == 'board/club' ? 'underline' : '' }">구단게시판</a>
+			<a href="${pageContext.servletContext.contextPath }/board/event"
+				class="no-deco-link ${mode == 'board/event' ? 'underline' : '' }">이벤트게시판</a>
 		</div>
 	</div>
 </body>

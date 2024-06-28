@@ -333,6 +333,11 @@ a {
 .no-deco-link {
 	color: #444;
 	text-decoration: none;
+	display: inline-block;
+	padding-bottom: 4px;
+}
+.underline {
+	border-bottom: 2px solid #444;
 }
 /* 버튼 클래스 */
 .button {

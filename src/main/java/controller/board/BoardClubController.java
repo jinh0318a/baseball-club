@@ -56,6 +56,7 @@ public class BoardClubController extends HttpServlet {
 			req.setAttribute("clubBoard", clubBoards);
 			req.setAttribute("announcement", announcement);
 			req.setAttribute("totalPages", totalPages);
+			req.setAttribute("mode", "board/club");
 			req.getRequestDispatcher("/WEB-INF/view/board/clubList.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();

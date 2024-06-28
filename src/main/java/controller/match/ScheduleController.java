@@ -73,7 +73,7 @@ public class ScheduleController extends HttpServlet {
 			req.setAttribute("lastWeek", startDate.minusWeeks(1));
 			req.setAttribute("nextWeek", startDate.plusWeeks(1));
 			req.setAttribute("matches", matches);
-
+			req.setAttribute("mode", "schedule");
 			req.getRequestDispatcher("/WEB-INF/view/matches/schedule.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();

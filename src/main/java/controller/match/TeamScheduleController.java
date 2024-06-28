@@ -138,6 +138,7 @@ public class TeamScheduleController extends HttpServlet {
 			req.setAttribute("previous", previous);
 			req.setAttribute("next", next);
 			req.setAttribute("matches", matches);
+			req.setAttribute("mode", "schedule");
 			req.getRequestDispatcher("/WEB-INF/view/matches/schedule-team.jsp").forward(req, resp);
 
 		} catch (Exception e) {

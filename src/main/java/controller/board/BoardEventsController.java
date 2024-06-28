@@ -56,6 +56,7 @@ public class BoardEventsController extends HttpServlet {
 			req.setAttribute("eventBoard", eventBoards);
 			req.setAttribute("announcement", announcement);
 			req.setAttribute("totalPages", totalPages);
+			req.setAttribute("mode", "board/event");
 			req.getRequestDispatcher("/WEB-INF/view/board/eventList.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();

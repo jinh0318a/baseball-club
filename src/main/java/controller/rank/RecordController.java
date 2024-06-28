@@ -17,11 +17,10 @@ public class RecordController extends HttpServlet {
 
 		FindHitterRanking fhr = new FindHitterRanking();
 		req.setAttribute("hitterRanking", fhr.execute());
-		
-		
+
 		FindPitcherRanking fpr = new FindPitcherRanking();
 		req.setAttribute("pitcherRanking", fpr.execute());
-
+		req.setAttribute("mode", "record");
 		req.getRequestDispatcher("/WEB-INF/view/ranks/record.jsp").forward(req, resp);
 	}
 }

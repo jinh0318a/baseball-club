@@ -16,7 +16,7 @@ public class PitcherRankingController extends HttpServlet{
 		
 		FindPitcherRanking fpr = new FindPitcherRanking();
 		req.setAttribute("pitcherRanking", fpr.execute());
-		
+		req.setAttribute("mode", "record");
 		req.getRequestDispatcher("/WEB-INF/view/ranks/pitcher-ranking.jsp").forward(req, resp);
 	}
 }

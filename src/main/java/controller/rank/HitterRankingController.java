@@ -15,7 +15,7 @@ public class HitterRankingController extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		FindHitterRanking fhr = new FindHitterRanking();
-		
+		req.setAttribute("mode", "record");
 		req.setAttribute("hitterRanking", fhr.execute());
 		req.getRequestDispatcher("/WEB-INF/view/ranks/hitter-ranking.jsp").forward(req, resp);
 	}

@@ -15,7 +15,7 @@ public class TeamRankingController extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		FindTeamRanking ftr = new FindTeamRanking();
 		req.setAttribute("teamRanking", ftr.execute());
-		
+		req.setAttribute("mode", "team-ranking");
 		req.getRequestDispatcher("/WEB-INF/view/ranks/team-ranking.jsp").forward(req, resp);
 	}
 }
