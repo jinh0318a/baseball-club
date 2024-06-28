@@ -12,8 +12,8 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	<div class="">
-		<div class="mypage">
+	<div class="mypage">
+		<div class="mypage-box">
 			<div class="inbox">
 				<h2>마이페이지</h2>
 				<a href="${pageContext.servletContext.contextPath }/modify"

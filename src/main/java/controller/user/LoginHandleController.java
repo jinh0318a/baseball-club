@@ -17,6 +17,7 @@ public class LoginHandleController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
+			
 			UserDao userDao = new UserDao();
 			String userId = request.getParameter("userId");
 			String password = request.getParameter("password");
@@ -26,13 +27,16 @@ public class LoginHandleController extends HttpServlet{
 				return;
 			}
 			
+			String url = (String)request.getSession().getAttribute("url");
 			
 			if(password.equals(user.getPassword())) {
 				request.getSession().setAttribute("authUser", user);
-				response.sendRedirect(request.getContextPath() + "/index");
+				
+				response.sendRedirect(request.getContextPath() + url);
 			}else {
 				response.sendRedirect(request.getContextPath() + "/error");
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			response.sendRedirect(request.getContextPath() + "/error");

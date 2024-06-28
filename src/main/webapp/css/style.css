@@ -662,7 +662,13 @@ a {
 	box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
 }
 /*마이페이지 클래스*/
-.mypage {
+.mypage{
+	margin: auto;
+	height: 800px;
+	width: 100%;
+	position: relative;
+}
+.mypage-box {
 	width: 300px;
 	height: 500px;
 	position: absolute;
@@ -697,7 +703,13 @@ a {
 	transform: translateY(-50%);
 }
 /*팔로우 클래스*/
-.follow {
+.follow{
+	margin: auto;
+	height: 700px;
+	width: 100%;
+	position: relative;
+}
+.follow-box {
 	width: 500px;
 	height: 250px;
 	position: absolute;
@@ -712,6 +724,7 @@ a {
 }
 
 .follower {
+	margin-top:100px;
 	width: 500px;
 	height: 800px;
 	position: absolute;
@@ -780,7 +793,13 @@ a {
 }
 
 /*프로필 클래스*/
-.profile {
+.profile{
+	margin: auto;
+	height: 700px;
+	width: 100%;
+	position: relative;
+}
+.profile-box {
 	width: 550px;
 	height: 350px;
 	position: absolute;
@@ -1098,15 +1117,20 @@ a {
 	border-radius: 20px;
 	padding-top: 5px;
 	padding-bottom: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 .popular-board h3{
 	border-bottom: 1px solid #d7dbe1;
 	padding: 10px;
 }
 
-
+.popular-board table td{
+	padding-left: 5px;
+	padding-right: 10px;
+	padding-top: 5px;
+	margin: auto;
+}
 
 
 

@@ -14,24 +14,26 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/view/common/header.jsp"%>
-	<div class="follower">
-		<div class="text-right">
-			<a href="${pageContext.servletContext.contextPath }/following"> <i
-				class="fa-solid fa-user-plus no-deco-link"></i>
-			</a>
-		</div>
+	<div class="follow" >
+		<div class="follower">
+			<div class="text-right">
+				<a href="${pageContext.servletContext.contextPath }/following">
+					<i class="fa-solid fa-user-plus no-deco-link"></i>
+				</a>
+			</div>
 
-		<div class="">
-			<span>${sessionScope.authUser.userId }님의 팔로워 목록</span>
-		</div>
-		<div class="">
-			<ul>
-				<c:forEach var="i" items="${follwers }">
-					<li><a
-						href="${pageContext.servletContext.contextPath }/profile?userId=${i.followerId }"
-						class="no-deco-link mx-2">${i.followerId }</a></li>
-				</c:forEach>
-			</ul>
+			<div class="">
+				<span>${sessionScope.authUser.userId }님의 팔로워 목록</span>
+			</div>
+			<div class="">
+				<ul>
+					<c:forEach var="i" items="${follwers }">
+						<li><a
+							href="${pageContext.servletContext.contextPath }/profile?userId=${i.followerId }"
+							class="no-deco-link mx-2">${i.followerId }</a></li>
+					</c:forEach>
+				</ul>
+			</div>
 		</div>
 	</div>
 </body>
