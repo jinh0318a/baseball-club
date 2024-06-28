@@ -55,9 +55,22 @@
 			<div class="text-center">
 				<a>${totalPages }</a>
 			</div>
-			<div>
-				<a href="${pageContext.servletContext.contextPath }/board/new"
-					class="no-deco-link"><button type="button" class="b-1 ">새글작성</button></a>
+			<div
+				style="display: flex; justify-content: center; gap: 50px; align-items: center; margin-top: 10px; margin-left: 120px;">
+				<div style="margin-right: 50px;">
+					<form
+						action="${pageContext.servletContext.contextPath}/board/search">
+						<input type="hidden" name="type" value="구단"> <input
+							type="text" class="srch-bar" placeholder="검색어를 입력하세요" size=60
+							style="padding: 8px; height: 40px; border-radius: 10px"
+							name="word">
+						<button type="submit" class="b-1 ">검색</button>
+					</form>
+				</div>
+				<div>
+					<a href="${pageContext.servletContext.contextPath }/board/new"
+						class="no-deco-link"><button type="button" class="b-1 ">새글작성</button></a>
+				</div>
 			</div>
 		</div>
 	</div>
