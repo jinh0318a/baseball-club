@@ -17,15 +17,15 @@
 				<table style="margin-left: auto; margin-right: auto;">
 					<thead>
 						<tr>
-							<th style="width: 5%">순위</th>
-							<th colspan="2" style="width: 25%">팀명</th>
+							<th style="width: 6%">순위</th>
+							<th colspan="2" style="width: 15%">팀명</th>
 							<th style="width: 10%">경기수</th>
 							<th style="width: 10%">승</th>
 							<th style="width: 10%">패</th>
 							<th style="width: 10%">무</th>
-							<th style="width: 15%">승률</th>
+							<th style="width: 10%">승률</th>
 							<th style="width: 10%">게임차</th>
-							<th style="width: 5%">연속</th>
+							<th style="width: 8%">연속</th>
 						</tr>
 					</thead>
 					<c:forEach var="i" items="${teamRanking }">

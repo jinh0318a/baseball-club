@@ -69,21 +69,21 @@
 					style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 0;">
 					<thead>
 						<tr>
-							<th style="width: 5%;">순위</th>
+							<th style="width: 6%;">순위</th>
 							<th style="width: 8%;">선수명</th>
-							<th style="width: 5%;">팀명</th>
+							<th style="width: 6%;">팀명</th>
 							<th style="width: 8%;">방어율</th>
 							<th style="width: 8%;">경기수</th>
-							<th style="width: 5%;">승</th>
-							<th style="width: 5%;">패</th>
+							<th style="width: 4%;">승</th>
+							<th style="width: 4%;">패</th>
 							<th style="width: 8%;">세이브</th>
-							<th style="width: 5%;">홀드</th>
+							<th style="width: 6%;">홀드</th>
 							<th style="width: 8%;">이닝</th>
 							<th style="width: 8%;">피안타</th>
 							<th style="width: 8%;">피홈런</th>
-							<th style="width: 5%;">볼넷</th>
-							<th style="width: 5%;">삼진</th>
-							<th style="width: 5%;">실점</th>
+							<th style="width: 6%;">볼넷</th>
+							<th style="width: 6%;">삼진</th>
+							<th style="width: 6%;">실점</th>
 							<th style="width: 5%;">WHIP</th>
 						</tr>
 					</thead>

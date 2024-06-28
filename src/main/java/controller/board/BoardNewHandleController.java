@@ -20,12 +20,18 @@ public class BoardNewHandleController extends HttpServlet {
 
 		try {
 			User authUser = (User) req.getSession().getAttribute("authUser");
-			if(authUser == null) {
+			if (authUser == null) {
 				resp.sendRedirect(req.getContextPath() + "/error");
 				return;
 			}
-			
-			
+			if (req.getParameter("title") == null || req.getParameter("title").isBlank()
+					|| req.getParameter("body") == null || req.getParameter("body").isBlank()
+					|| req.getParameter("type") == null || req.getParameter("type").isBlank()
+					|| req.getParameter("category") == null || req.getParameter("category").isBlank()) {
+				resp.sendRedirect(req.getContextPath() + "/error");
+				return;
+			}
+
 			String writerId = authUser.getUserId();
 			String title = req.getParameter("title");
 			String body = req.getParameter("body");
@@ -38,7 +44,7 @@ public class BoardNewHandleController extends HttpServlet {
 			BoardDao boardDao = new BoardDao();
 
 			boolean r = boardDao.save(board);
-			
+
 			if (!r) {
 				resp.sendRedirect(req.getContextPath() + "/error");
 				return;
@@ -50,7 +56,7 @@ public class BoardNewHandleController extends HttpServlet {
 				resp.sendRedirect(req.getContextPath() + "/board/event");
 			} else if (r && type.equals("구단")) {
 				resp.sendRedirect(req.getContextPath() + "/board/club");
-			} else if(r && type.equals("공지사항")) {
+			} else if (r && type.equals("공지사항")) {
 				resp.sendRedirect(req.getContextPath() + "/board/list");
 			}
 

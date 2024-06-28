@@ -209,4 +209,26 @@ public class CommentDao {
 
 	}
 
+	
+	public boolean deleteCommentByBoard(int boardId) throws SQLException {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@//13.125.210.77:1521/xe");
+		ods.setUser("baseball_club");
+		ods.setPassword("oracle");
+		try (Connection conn = ods.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("delete from comments where board_id=?");
+			stmt.setInt(1, boardId);
+
+			int r = stmt.executeUpdate();
+
+			return r >= 0 ? true : false;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+	
+	
 }
