@@ -42,7 +42,7 @@ public class BoardListController extends HttpServlet {
 				}
 			}
 			List<Board> boardList = new ArrayList<Board>();
-
+			
 			for (Board one : board) {
 				String type = one.getType();
 				if (type.equals("광장")) {
