@@ -25,7 +25,7 @@
 				href="https://www.hanwhaeagles.co.kr/index.do" target="_blank"
 				title="한화이글스"><img src="img/hanhwa-eagles.jpg" /> </a> <a
 				href="https://www.samsunglions.com/" target="_blank" title="삼성라이온즈"><img
-				src="img/kia-tigers.jpg" /> </a> <a
+				src="img/samsung-lions.jpg" /> </a> <a
 				href="https://www.giantsclub.com/html/" target="_blank"
 				title="롯데자이언츠"><img src="img/lotte-giants.jpg" /></a>
 		</div>

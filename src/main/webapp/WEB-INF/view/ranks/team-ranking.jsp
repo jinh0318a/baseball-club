@@ -36,59 +36,52 @@
 									style="display: flex; justify-content: center; text-align: center;">
 									<c:if test="${i.name == 'KIA'}">
 										<img
-											src="https://i.namu.wiki/i/JkdlAhhQcnMmcqrazf1FlVsvrG_tWJFfE9ye2uMTVK60MIiRYfqPCcGI4ofXWDS4YnKjedYoyIvKYbCzJ6qpoZvyYnN9vtk1PbQzCf8wka3u8E2voypso3qaSfbe7P9ocxAXbdCEynJcCRmBp7sD-w.svg"
+											src="img/kia-tigers.jpg"
 											witdth="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == '키움'}">
 										<img
-											src="https://i.namu.wiki/i/Qub5dLxWr5nWffYFnvtlK2AAdJ6Ei1DLXiGW52owxP3DhfZImoOrRUnoI4WXNcNl6VJ7b0G6pVLdcsAp0EScyjZd5mNU7JonX4kmjCZ7BMNPc-qgCN3D8GoxWiwL7tX3-1l8lrmgicTEZfDSECgqXA.svg
-							"
+											src="img/kiwoon-heros.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == '한화'}">
 										<img
-											src="https://i.namu.wiki/i/dJMR7enHxv_U53_auaywWJ4KT9UmYGZxjxlNKPA8o_A-wvk22vUOukMgk6lJBxz-UiGdQPir4jMQNIV9WJyl_Pw5sfSL6nYwRzHeVfd-OiJT9YkuVfjNDCNMcxFc7s8kk0nz_2a_zMQ0pN7ZZI0aYA.svg
-							"
+											src="img/hanhwa-eagles.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == '삼성'}">
 										<img
-											src="https://i.namu.wiki/i/cMZ4a4jUU7GFisAbHVU7FFCeUZeb5U2kz5JFwn-Oy4hZgh-QKs34f3-w9xRBEwPgyK73V_VRu6RA68PWZPHDlFOceN_1HihQ1R1lHyh12UzY1feqXl6h9olx1JizZVbP9O9GqGkZz0KUGSvomo9J9g.svg
-							"
+											src="img/samsung-lions.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == '롯데'}">
 										<img
-											src="https://i.namu.wiki/i/JKabDmgmnwQ7HcK68kOJiicJ074aI41QWe0ZQCpLKFoRkA1eXqBlVUdZNVurwF1_Eu5QHwm45JkSTQSPlmpSFGUNS0gS92WiNMLr9I80syKnreng2ndUnBR2SX0iAFAag6PZBU3olhUejZ5KkINMHQ.svg
-							"
+											src="img/lotte-giants.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == '두산'}">
 										<img
-											src="https://i.namu.wiki/i/JfBCPwmvKM-gyBQi1J9IsWixMaYsp1MdmAtk7wvpBitQLSioLYI45vYA7XLkjmFP1udeIYSzKHPlXqTTA1aIgXTUgKMWJZiP36OowNC1RlYiLSlbAW7druy-JaY6Hn8ctQq7CaNxvMLWCqE1vVNbjA.svg
-							"
+											src="img/doosan-bears.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == 'LG'}">
 										<img
-											src="https://i.namu.wiki/i/JMNSXMOBgP23YaYnROHsjYL-UxC_q7zESQ0cGzRbs_r20OxsIignk6ssM2lwvkaxoH-ea0P5u3_fzcmPcSzqFM1ubAh7sulPTr--i3JXrSBSw2Gy1pyP1wMrEtj8RDKV3KbOOxNFn0-_ICryaS2Y6Q.svg"
+											src="img/lg-twins.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == 'KT'}">
 										<img
-											src="https://i.namu.wiki/i/xfGslulXUvzz-abZDFaced_Zb-FxzAxut_kdDQlXRicxhzEtuNJCn48jABtf0QpBQ47LMBiDJzC4AT3Fw0Jtkg.svg
-							"
+											src="img/kt-wiz.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == 'SSG'}">
 										<img
-											src="https://i.namu.wiki/i/wcOGW0ui6neqGNcccYyy7FInd2gXCgQFcZGc9P-rL84NTJ4gmLPi2x-FfC7Z6JppstoWxxMjMu7BX-0tEYiW_XMwNM2hlPfWMyUGmfo1noR-52qPjpr436P5uVyrVKQEBxNaToPWkYqcPKm4QPBDVg.svg
-							"
+											src="img/ssg-landers.jpg"
 											width="30px" height="30px" />
 									</c:if>
 									<c:if test="${i.name == 'NC'}">
 										<img
-											src="https://i.namu.wiki/i/7U4K0G1nqS7g6opb89q9BWS3o4UkskaGPGTgVqpLwQyBaLA6dwhZ-v_giJ0AQqZawbG96f8ucODhyGJd4QBuu8uXKD9kfD94XfEfLH_OwGeaHMMYKiQepXT9liqeA5CLoiQnOYziqrr8qBL4o-_QWw.svg"
+											src="img/nc-dinos.png"
 											width="30px" height="30px" />
 									</c:if>
 									<span style="margin-left: 10px;">${i.name }</span>
